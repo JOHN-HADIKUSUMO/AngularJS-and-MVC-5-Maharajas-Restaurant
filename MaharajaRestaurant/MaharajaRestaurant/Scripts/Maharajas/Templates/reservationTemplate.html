@@ -1,0 +1,141 @@
+﻿<div class="container" ng-controller="reservationController">
+    <ol class="breadcrumb">
+        <li class="active">Reservation</li>
+    </ol>
+    <form class="form-horizontal" role="form">
+        <fieldset>
+            <legend style="padding-left:15px;">Your Details</legend>
+        </fieldset>
+        <div class="form-group">
+            <label for="title" class="col-sm-offset-2 col-sm-2 control-label">Title</label>
+            <div class="col-sm-8">
+                <select class="form-control" id="title" ng-model="booking.yourdetail.title">
+                    <option ng-repeat="item in titleoptions" value="{{item}}">{{item}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="firstname" class="col-sm-offset-2 col-sm-2 control-label">Firstname</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="firstname" placeholder="Your firstname..." ng-model="booking.yourdetail.firstname">
+                <span class="sr-only"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="lastname" class="col-sm-offset-2 col-sm-2 control-label">Lastname</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="lastname" placeholder="Your lastname..." ng-model="booking.yourdetail.lastname">
+                <span class="sr-only"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email" class="col-sm-offset-2 col-sm-2 control-label">Email</label>
+            <div class="col-sm-8">
+                <input type="email" class="form-control" id="email" placeholder="Your email..." ng-model="booking.yourdetail.email">
+                <span class="sr-only"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email" class="col-sm-offset-2 col-sm-2 control-label">Mobile</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="mobile" placeholder="Your mobile number..." ng-model="booking.yourdetail.mobile">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email" class="col-sm-offset-2 col-sm-2 control-label">I am new customer</label>
+            <div class="col-sm-8">
+                <label class="radio-inline">
+                    <input type="radio" name="status" id="status0" value="1" ng-model="booking.yourdetail.firsttimecustomer">Yes
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="status" id="status1" value="0" ng-model="booking.yourdetail.firsttimecustomer">No
+                </label>
+            </div>
+        </div>
+        <div class="form-group" ng-hide="booking.yourdetail.firsttimecustomer==0">
+            <label for="email" class="col-sm-offset-2 col-sm-2 control-label">Password</label>
+            <div class="col-sm-8">
+                <input type="password" class="form-control" id="password" placeholder="Your password (min 8 characters)" ng-model="booking.yourdetail.password">
+                <span class="sr-only"></span>
+            </div>
+        </div>
+        <div class="form-group" ng-hide="booking.yourdetail.firsttimecustomer==0">
+            <label for="email" class="col-sm-offset-2 col-sm-2 control-label">Confirming Password</label>
+            <div class="col-sm-8">
+                <input type="password" class="form-control" id="conpassword" placeholder="Your confirming password" ng-model="booking.yourdetail.conpassword">
+                <span class="sr-only"></span>
+            </div>
+        </div>
+    </form>
+    <form class="form-horizontal" role="form">
+        <fieldset>
+            <legend style="padding-left:15px;">Your Booking</legend>
+        </fieldset>
+        <div class="form-group">
+            <label for="firtname" class="col-sm-offset-2 col-sm-2 control-label">Name Your Event</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="eventname" placeholder="Your event name..." ng-model="booking.yourevent.name">
+                <span class="sr-only"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="title" class="col-sm-offset-2 col-sm-2 control-label">Date</label>
+            <div class="col-sm-1">
+                <select class="form-control" id="day" ng-model="booking.yourevent.day">
+                    <option ng-repeat="item in dayoptions" value="{{item}}">{{item}}</option>
+                </select>
+            </div>
+            <div class="col-sm-2">
+                <select class="form-control" id="month" ng-model="booking.yourevent.month">
+                    <option ng-repeat="item in monthoptions" value="{{item.value}}">{{item.key}}</option>
+                </select>
+            </div>
+            <div class="col-sm-2">
+                <select class="form-control" id="year" ng-model="booking.yourevent.year">
+                    <option ng-repeat="item in yearoptions" value="{{item}}">{{item}}</option>
+                </select>
+            </div>
+            <div class="col-sm-3"> </div>
+        </div>
+        <div class="form-group">
+            <label for="title" class="col-sm-offset-2 col-sm-2 control-label">Number of People</label>
+            <div class="col-sm-2">
+                <select class="form-control" id="day" ng-model="booking.yourevent.numberofpeople">
+                    <option ng-repeat="item in numberofpeopleoptions" value="{{item}}">{{item}}</option>
+                </select>
+            </div>
+            <div class="col-sm-6"> </div>
+        </div>
+        <div class="form-group">
+            <label for="title" class="col-sm-offset-2 col-sm-2 control-label">Environment</label>
+            <div class="col-sm-8">
+                <label class="radio-inline">
+                    <input type="radio" name="environment" id="smoking" value="0" ng-model="booking.yourevent.environtment">Smoking
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="environment" id="nonsmoking" value="1" ng-model="booking.yourevent.environtment">Non Smoking
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="title" class="col-sm-offset-2 col-sm-2 control-label">Payment Method</label>
+            <div class="col-sm-8">
+                <label class="radio-inline">
+                    <input type="radio" name="payment" id="cash" ng-model="booking.yourevent.paymentmethod" value="0">Cash
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="payment" id="visamaster" ng-model="booking.yourevent.paymentmethod" value="1">VISA/MASTER
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="payment" id="amex" ng-model="booking.yourevent.paymentmethod" value="2">AMEX
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-10 col-sm-2">
+                <button type="submit" class="btn btn-primary" ng-click="submitclick()">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
