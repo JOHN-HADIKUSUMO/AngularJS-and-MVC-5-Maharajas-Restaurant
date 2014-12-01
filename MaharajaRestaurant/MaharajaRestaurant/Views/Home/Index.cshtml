@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Welcome Page";
+}
+
+<div class="row">
+    <div class="col-md-1">&nbsp;</div>
+    <sliders-form />
+    <div class="col-md-2">&nbsp;</div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/Maharajas/maharajasApp.js"></script>
+    <script src="~/Scripts/Maharajas/Sliders/slidersController.js"></script>
+    <script src="~/Scripts/Maharajas/Sliders/slidersDirective.js"></script>
+    <script src="~/Scripts/Maharajas/Sliders/slidersService.js"></script>
+}

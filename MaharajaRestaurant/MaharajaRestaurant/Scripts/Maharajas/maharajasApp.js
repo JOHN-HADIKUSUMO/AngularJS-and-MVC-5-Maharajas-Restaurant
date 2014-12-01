@@ -1,0 +1,1 @@
+﻿var maharajasApp = angular.module('maharajasApp', []);
