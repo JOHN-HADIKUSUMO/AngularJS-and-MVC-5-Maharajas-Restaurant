@@ -1,0 +1,133 @@
+﻿@{
+    ViewBag.Title = "Reservation";
+}
+<div class="container">
+    <ol class="breadcrumb">
+        <li class="active">Reservation</li>
+    </ol>
+    <form class="form-horizontal" role="form">
+        <fieldset>
+            <legend>Your Details</legend>
+        </fieldset>
+        <div class="form-group">
+            <label for="title" class="col-sm-offset-2 col-sm-2 control-label">Title</label>
+            <div class="col-sm-8">
+                <select class="form-control" id="title">
+                    <option>Mr</option>
+                    <option>Mrs</option>
+                    <option>Miss</option>
+                    <option>Sir</option>
+                    <option>Madam</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="firtname" class="col-sm-offset-2 col-sm-2 control-label">Firstname</label>
+            <div class="col-sm-8">
+                <input type="email" class="form-control" id="firtname" placeholder="Your firstname...">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="lastname" class="col-sm-offset-2 col-sm-2 control-label">Lastname</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="lastname" placeholder="Your lastname...">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email" class="col-sm-offset-2 col-sm-2 control-label">Email</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="email" placeholder="Your email...">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email" class="col-sm-offset-2 col-sm-2 control-label">Telephone/Mobile</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="telephone" placeholder="Your telephone or mobile number...">
+            </div>
+        </div>
+    </form>
+    <form class="form-horizontal" role="form">
+        <fieldset>
+            <legend>Your Booking</legend>
+        </fieldset>
+        <div class="form-group">
+            <label for="firtname" class="col-sm-offset-2 col-sm-2 control-label">Name Your Event</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="eventname" placeholder="Your event name...">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="title" class="col-sm-offset-2 col-sm-2 control-label">Date</label>
+            <div class="col-sm-1">
+                <select class="form-control" id="day">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="col-sm-2">
+                <select class="form-control" id="month">
+                    <option>January</option>
+                </select>
+            </div>
+            <div class="col-sm-2">
+                <select class="form-control" id="year">
+                    <option>2014</option>
+                </select>
+            </div>
+            <div class="col-sm-3"> </div>
+        </div>
+        <div class="form-group">
+            <label for="title" class="col-sm-offset-2 col-sm-2 control-label">Number of People</label>
+            <div class="col-sm-1">
+                <select class="form-control" id="day">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="col-sm-7"> </div>
+        </div>
+        <div class="form-group">
+            <label for="title" class="col-sm-offset-2 col-sm-2 control-label">Environment</label>
+            <div class="col-sm-8">
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">Smoking
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">Non Smoking
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="title" class="col-sm-offset-2 col-sm-2 control-label">Payment Method</label>
+            <div class="col-sm-8">
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">Cash
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">VISA/MASTER
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">AMEX
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-10 col-sm-2">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @*<script src="~/Scripts/Maharajas/maharajasApp.js"></script>
+        <script src="~/Scripts/Maharajas/Menus/menusController.js"></script>
+        <script src="~/Scripts/Maharajas/Menus/menusDirective.js"></script>
+        <script src="~/Scripts/Maharajas/Menus/menusService.js"></script>*@
+}
