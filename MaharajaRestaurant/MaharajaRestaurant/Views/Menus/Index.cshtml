@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Menus";
+}
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a href="#">Menus</a></li>
+        <li class="active">@Html.Raw(ViewData["Category"])</li>
+    </ol>
+    <menus-form />
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/Maharajas/maharajasApp.js"></script>
+    <script src="~/Scripts/Maharajas/Menus/menusController.js"></script>
+    <script src="~/Scripts/Maharajas/Menus/menusDirective.js"></script>
+    <script src="~/Scripts/Maharajas/Menus/menusService.js"></script>
+}

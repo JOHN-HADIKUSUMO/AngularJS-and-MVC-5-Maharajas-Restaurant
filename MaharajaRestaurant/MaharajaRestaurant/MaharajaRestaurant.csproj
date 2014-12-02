@@ -159,6 +159,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\MenusController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -200,14 +201,21 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\Maharajas\maharajasApp.js" />
+    <Content Include="Scripts\Maharajas\Menus\menusController.js" />
+    <Content Include="Scripts\Maharajas\Menus\menusDirective.js" />
+    <Content Include="Scripts\Maharajas\Menus\menusService.js" />
     <Content Include="Scripts\Maharajas\Sliders\slidersController.js" />
     <Content Include="Scripts\Maharajas\Sliders\slidersDirective.js" />
     <Content Include="Scripts\Maharajas\Sliders\slidersService.js" />
+    <Content Include="Scripts\Maharajas\Templates\menusTemplate.html" />
     <Content Include="Scripts\Maharajas\Templates\slidersTemplate.html" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Menus\Index.cshtml">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
