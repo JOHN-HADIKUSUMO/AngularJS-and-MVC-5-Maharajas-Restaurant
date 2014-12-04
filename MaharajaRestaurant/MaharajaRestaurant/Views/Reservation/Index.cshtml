@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "Reservation";
 }
-<div class="container">
+<div class="container" ng-controller="reservationController">
     <ol class="breadcrumb">
         <li class="active">Reservation</li>
     </ol>
@@ -24,25 +24,25 @@
         <div class="form-group">
             <label for="firtname" class="col-sm-offset-2 col-sm-2 control-label">Firstname</label>
             <div class="col-sm-8">
-                <input type="email" class="form-control" id="firtname" placeholder="Your firstname...">
+                <input type="text" class="form-control" id="firtname" placeholder="Your firstname..." ng-model="yourdetail.firstname">
             </div>
         </div>
         <div class="form-group">
             <label for="lastname" class="col-sm-offset-2 col-sm-2 control-label">Lastname</label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" id="lastname" placeholder="Your lastname...">
+                <input type="text" class="form-control" id="lastname" placeholder="Your lastname..." ng-model="yourdetail.lastname">
             </div>
         </div>
         <div class="form-group">
             <label for="email" class="col-sm-offset-2 col-sm-2 control-label">Email</label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" id="email" placeholder="Your email...">
+                <input type="email" class="form-control" id="email" placeholder="Your email..." ng-model="yourdetail.email">
             </div>
         </div>
         <div class="form-group">
             <label for="email" class="col-sm-offset-2 col-sm-2 control-label">Telephone/Mobile</label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" id="telephone" placeholder="Your telephone or mobile number...">
+                <input type="text" class="form-control" id="telephone" placeholder="Your telephone or mobile number..." ng-model="yourdetail.telephone">
             </div>
         </div>
     </form>
@@ -53,13 +53,13 @@
         <div class="form-group">
             <label for="firtname" class="col-sm-offset-2 col-sm-2 control-label">Name Your Event</label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" id="eventname" placeholder="Your event name...">
+                <input type="text" class="form-control" id="eventname" placeholder="Your event name..." ng-model="yourevent.name">
             </div>
         </div>
         <div class="form-group">
             <label for="title" class="col-sm-offset-2 col-sm-2 control-label">Date</label>
             <div class="col-sm-1">
-                <select class="form-control" id="day">
+                <select class="form-control" id="day" ng-model="yourevent.day">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -68,12 +68,12 @@
                 </select>
             </div>
             <div class="col-sm-2">
-                <select class="form-control" id="month">
+                <select class="form-control" id="month" ng-model="yourevent.month">
                     <option>January</option>
                 </select>
             </div>
             <div class="col-sm-2">
-                <select class="form-control" id="year">
+                <select class="form-control" id="year" ng-model="yourevent.year">
                     <option>2014</option>
                 </select>
             </div>
@@ -82,7 +82,7 @@
         <div class="form-group">
             <label for="title" class="col-sm-offset-2 col-sm-2 control-label">Number of People</label>
             <div class="col-sm-1">
-                <select class="form-control" id="day">
+                <select class="form-control" id="day" ng-model="yourevent.numberofpeople">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -96,10 +96,10 @@
             <label for="title" class="col-sm-offset-2 col-sm-2 control-label">Environment</label>
             <div class="col-sm-8">
                 <label class="radio-inline">
-                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">Smoking
+                    <input type="radio" name="environment" id="smoking" value="0" ng-model="yourevent.environtment">Smoking
                 </label>
                 <label class="radio-inline">
-                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">Non Smoking
+                    <input type="radio" name="environment" id="nonsmoking" value="1" ng-model="yourevent.environtment">Non Smoking
                 </label>
             </div>
         </div>
@@ -107,27 +107,26 @@
             <label for="title" class="col-sm-offset-2 col-sm-2 control-label">Payment Method</label>
             <div class="col-sm-8">
                 <label class="radio-inline">
-                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">Cash
+                    <input type="radio" name="payment" id="cash" ng-model="yourevent.paymentmethod" value="0">Cash
                 </label>
                 <label class="radio-inline">
-                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">VISA/MASTER
+                    <input type="radio" name="payment" id="visamaster" ng-model="yourevent.paymentmethod" value="1">VISA/MASTER
                 </label>
                 <label class="radio-inline">
-                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">AMEX
+                    <input type="radio" name="payment" id="amex" ng-model="yourevent.paymentmethod" value="2">AMEX
                 </label>
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-10 col-sm-2">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" ng-click="submitclick()">Submit</button>
             </div>
         </div>
     </form>
 </div>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-    @*<script src="~/Scripts/Maharajas/maharajasApp.js"></script>
-        <script src="~/Scripts/Maharajas/Menus/menusController.js"></script>
-        <script src="~/Scripts/Maharajas/Menus/menusDirective.js"></script>
-        <script src="~/Scripts/Maharajas/Menus/menusService.js"></script>*@
+    <script src="~/Scripts/Maharajas/maharajasApp.js"></script>
+    <script src="~/Scripts/Maharajas/Reservation/reservationService.js"></script>
+    <script src="~/Scripts/Maharajas/Reservation/reservationController.js"></script>
 }

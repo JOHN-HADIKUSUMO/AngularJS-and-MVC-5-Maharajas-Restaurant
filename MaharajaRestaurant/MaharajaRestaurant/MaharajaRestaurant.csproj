@@ -39,6 +39,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -107,12 +115,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.1.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -165,6 +167,51 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201412011055251_InitialCreate.cs" />
+    <Compile Include="Migrations\201412011055251_InitialCreate.Designer.cs">
+      <DependentUpon>201412011055251_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412032341027_useraccount.cs" />
+    <Compile Include="Migrations\201412032341027_useraccount.Designer.cs">
+      <DependentUpon>201412032341027_useraccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412040014022_userupdate.cs" />
+    <Compile Include="Migrations\201412040014022_userupdate.Designer.cs">
+      <DependentUpon>201412040014022_userupdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412040046469_userupdate1.cs" />
+    <Compile Include="Migrations\201412040046469_userupdate1.Designer.cs">
+      <DependentUpon>201412040046469_userupdate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412040053001_useraccount2.cs" />
+    <Compile Include="Migrations\201412040053001_useraccount2.Designer.cs">
+      <DependentUpon>201412040053001_useraccount2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412040059254_useraccount3.cs" />
+    <Compile Include="Migrations\201412040059254_useraccount3.Designer.cs">
+      <DependentUpon>201412040059254_useraccount3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412040100469_useraccount4.cs" />
+    <Compile Include="Migrations\201412040100469_useraccount4.Designer.cs">
+      <DependentUpon>201412040100469_useraccount4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412040109174_useraccount41.cs" />
+    <Compile Include="Migrations\201412040109174_useraccount41.Designer.cs">
+      <DependentUpon>201412040109174_useraccount41.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412040110083_useraccount5.cs" />
+    <Compile Include="Migrations\201412040110083_useraccount5.Designer.cs">
+      <DependentUpon>201412040110083_useraccount5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412040113103_useraccount6.cs" />
+    <Compile Include="Migrations\201412040113103_useraccount6.Designer.cs">
+      <DependentUpon>201412040113103_useraccount6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412040116041_useraccount7.cs" />
+    <Compile Include="Migrations\201412040116041_useraccount7.Designer.cs">
+      <DependentUpon>201412040116041_useraccount7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -205,6 +252,9 @@
     <Content Include="Scripts\Maharajas\Menus\menusController.js" />
     <Content Include="Scripts\Maharajas\Menus\menusDirective.js" />
     <Content Include="Scripts\Maharajas\Menus\menusService.js" />
+    <Content Include="Scripts\Maharajas\Reservation\reservationController.js" />
+    <Content Include="Scripts\Maharajas\Reservation\reservationDirective.js" />
+    <Content Include="Scripts\Maharajas\Reservation\reservationService.js" />
     <Content Include="Scripts\Maharajas\Sliders\slidersController.js" />
     <Content Include="Scripts\Maharajas\Sliders\slidersDirective.js" />
     <Content Include="Scripts\Maharajas\Sliders\slidersService.js" />
@@ -253,6 +303,41 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201412011055251_InitialCreate.resx">
+      <DependentUpon>201412011055251_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412032341027_useraccount.resx">
+      <DependentUpon>201412032341027_useraccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412040014022_userupdate.resx">
+      <DependentUpon>201412040014022_userupdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412040046469_userupdate1.resx">
+      <DependentUpon>201412040046469_userupdate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412040053001_useraccount2.resx">
+      <DependentUpon>201412040053001_useraccount2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412040059254_useraccount3.resx">
+      <DependentUpon>201412040059254_useraccount3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412040100469_useraccount4.resx">
+      <DependentUpon>201412040100469_useraccount4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412040109174_useraccount41.resx">
+      <DependentUpon>201412040109174_useraccount41.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412040110083_useraccount5.resx">
+      <DependentUpon>201412040110083_useraccount5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412040113103_useraccount6.resx">
+      <DependentUpon>201412040113103_useraccount6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412040116041_useraccount7.resx">
+      <DependentUpon>201412040116041_useraccount7.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
