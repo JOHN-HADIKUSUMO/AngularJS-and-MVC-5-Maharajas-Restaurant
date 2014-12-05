@@ -14,6 +14,5 @@ namespace MaharajaRestaurant.Models.REST.Reservation
         public string numberofpeople { get; set; }
         public int environment { get; set; }
         public int paymentmethod { get; set; }
-        public string conpassword { get; set; }
     }
 }

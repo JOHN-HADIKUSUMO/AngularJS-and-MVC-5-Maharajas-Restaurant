@@ -10,9 +10,12 @@ using MaharajaRestaurant.Models.REST.Reservation;
 
 namespace MaharajaRestaurant.Controllers.REST
 {
-    [RoutePrefix("Reservation")]
+    [RoutePrefix("REST/RESERVATION")]
     public class ReservationController : ApiController
     {
+        [HttpPost]
+        [AcceptVerbs("POST")]
+        [Route("Create")]
         public Task<bool> Create(inReservationModel model)
         {
             return Task.FromResult<Boolean>(true);

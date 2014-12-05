@@ -7,7 +7,7 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item {{item.css}}" ng-repeat="item in sliderslist">
-                <img src="{{item.url}}" alt="{{item.title}}" />
+                <img ng-src="{{item.url}}" alt="{{item.title}}" />
                 <div class="carousel-caption">
                     <h3>{{item.title}}</h3>
                     <p>{{item.description}}</p>

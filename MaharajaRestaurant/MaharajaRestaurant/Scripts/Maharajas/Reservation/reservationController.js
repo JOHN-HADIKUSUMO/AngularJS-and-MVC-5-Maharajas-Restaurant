@@ -58,8 +58,8 @@
     $scope.yearoptions = [2014, 2015];
     $scope.numberofpeopleoptions = ['1-5','5-10','10-20','20-40'];
     $scope.submitclick = function () {
-        alert(JSON.stringify($scope.booking));
-        //$scope.removeallerror();
+        $scope.removeallerror();
+        reservationService.create($scope.booking );
 
         //if ($.trim($scope.yourdetail.firstname) == '')
         //{
