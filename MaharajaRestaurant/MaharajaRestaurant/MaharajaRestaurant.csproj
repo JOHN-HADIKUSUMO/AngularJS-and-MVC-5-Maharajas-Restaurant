@@ -236,6 +236,14 @@
     <Compile Include="Migrations\201412080650410_migration12.Designer.cs">
       <DependentUpon>201412080650410_migration12.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201412081101326_migration13.cs" />
+    <Compile Include="Migrations\201412081101326_migration13.Designer.cs">
+      <DependentUpon>201412081101326_migration13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412081102355_migration14.cs" />
+    <Compile Include="Migrations\201412081102355_migration14.Designer.cs">
+      <DependentUpon>201412081102355_migration14.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -246,6 +254,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CCF20935-20E8-4E0A-B189-87DE6011085B.png" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -255,18 +264,47 @@
     <Content Include="Images\Boxes\300x300-Box.png" />
     <Content Include="Images\Menus\756A933D-08D0-4201-A8B4-EFB6F42A895F.png" />
     <Content Include="Images\Menus\795123A9-E5D6-4D58-B304-33110D065A0D.png" />
+    <Content Include="Images\Menus\35DAC79C-6322-4317-ABD2-50A7D18AED33.png" />
+    <Content Include="Images\Menus\1472844E-B704-4659-8311-7C01498F3D42.png" />
+    <Content Include="Images\Menus\32D098D5-E18D-44E0-B896-62C3860F4742.png" />
+    <Content Include="Images\Menus\E4CEF3A9-5C47-42BC-B5F4-50B3306D674F.png" />
+    <Content Include="Images\Menus\29FF8BE9-FD94-44EB-AFAD-C29B3A583404.png" />
+    <Content Include="Images\Menus\3A7D7035-BE3F-49FC-BAB2-2ED230D105EB.png" />
+    <Content Include="Images\Menus\EE3484B8-38C7-4872-97D6-6E8A3EA7596D.png" />
+    <Content Include="Images\Menus\6A9DB57D-98C6-4542-9CF1-58414E6AE2F4.png" />
+    <Content Include="Images\Menus\EE12E891-1597-427E-A9B2-4106B14EACDB.png" />
+    <Content Include="Images\Menus\454273D0-D239-46A7-AC90-DC2AFDCF0AA6.png" />
+    <Content Include="Images\Menus\9CF3E910-7ACE-4E58-9C5B-121127DEB7DD.png" />
+    <Content Include="Images\Menus\AF268FEC-40A8-4F07-82ED-2A16569B031D.png" />
+    <Content Include="Images\Menus\46B656A4-8353-41AE-85F2-1DF87A095639.png" />
+    <Content Include="Images\Menus\035BAE4C-2F87-48E5-92B3-8A8D1002360C.png" />
+    <Content Include="Images\Menus\CB9D3887-A081-403D-AD1E-AB729503C9CB.png" />
+    <Content Include="Images\Menus\E7D15EBD-CF15-444D-A687-CC355BC37037.png" />
+    <Content Include="Images\Menus\38DE39D7-DCDD-4695-80F6-0396D8B6B9FD.png" />
+    <Content Include="Images\Menus\984547A2-8357-42EA-A730-A927E463DA66.png" />
+    <Content Include="Images\Menus\{06409BB6-B146-4D3C-A7FD-3B02584177E7}.png" />
+    <Content Include="Images\Menus\B9C88C79-78DC-4787-85ED-238C6B945ECA.png" />
+    <Content Include="Images\Menus\983B99CC-63AA-4C5C-957D-DA4B9FC27BC0.png" />
+    <Content Include="Images\Menus\827EDE4F-73F8-4D46-AB73-71092242A3A9.png" />
+    <Content Include="Images\Menus\48531542-3DC3-4553-AB87-9630A320D366.png" />
+    <Content Include="Images\Menus\99BB525B-8C9F-450A-9001-C649526CF2D1.png" />
+    <Content Include="Images\Menus\FBFE59B2-258B-490F-A7F3-A10055E1CE32.png" />
+    <Content Include="Images\Menus\3B2FA8B0-EBC6-4CB8-90EC-15A43F740AC4.png" />
+    <Content Include="Images\Menus\A2796DAD-35AE-4040-8E58-1F094154A81F.png" />
+    <Content Include="Images\Menus\C9389E29-791C-4D56-9430-68B1B4DA99D0.png" />
+    <Content Include="Images\Menus\29512990-D9BD-4613-9E52-8FF50AF096A5.png" />
     <Content Include="Images\Menus\D04AB26D-9CB9-47A0-A9AC-C876F6F2E868.png" />
     <Content Include="Images\Menus\17950D52-F989-40B9-8B19-DFA0FA45AB7F.png" />
-    <Content Include="Images\Menus\E52D9F9F-30E0-49F4-BD4A-F9EEF7C01466 - Copy %2810%29.png" />
-    <Content Include="Images\Menus\E52D9F9F-30E0-49F4-BD4A-F9EEF7C01466 - Copy %282%29.png" />
-    <Content Include="Images\Menus\E52D9F9F-30E0-49F4-BD4A-F9EEF7C01466 - Copy %283%29.png" />
-    <Content Include="Images\Menus\E52D9F9F-30E0-49F4-BD4A-F9EEF7C01466 - Copy %284%29.png" />
-    <Content Include="Images\Menus\E52D9F9F-30E0-49F4-BD4A-F9EEF7C01466 - Copy %285%29.png" />
-    <Content Include="Images\Menus\E52D9F9F-30E0-49F4-BD4A-F9EEF7C01466 - Copy %286%29.png" />
-    <Content Include="Images\Menus\E52D9F9F-30E0-49F4-BD4A-F9EEF7C01466 - Copy %287%29.png" />
-    <Content Include="Images\Menus\E52D9F9F-30E0-49F4-BD4A-F9EEF7C01466 - Copy %288%29.png" />
-    <Content Include="Images\Menus\E52D9F9F-30E0-49F4-BD4A-F9EEF7C01466 - Copy %289%29.png" />
-    <Content Include="Images\Menus\E52D9F9F-30E0-49F4-BD4A-F9EEF7C01466 - Copy.png" />
+    <Content Include="Images\Menus\1C0EA585-809A-41CA-8BB2-FFAD524EFB0F.png" />
+    <Content Include="Images\Menus\52A33270-A843-4599-B294-FF24C918EC11.png" />
+    <Content Include="Images\Menus\CDC40A6D-5918-41CC-B3A6-227D7BAD9849.png" />
+    <Content Include="Images\Menus\45ED9507-4D27-48AE-8B68-3F750015F4DE.png" />
+    <Content Include="Images\Menus\A089B00B-0BB3-4597-A78E-84970A226ADA.png" />
+    <Content Include="Images\Menus\0340B7C7-E51A-43E6-AD0E-7982E028EF40.png" />
+    <Content Include="Images\Menus\3D1F13CF-0707-4EDF-9871-8C51BC19ADC8.png" />
+    <Content Include="Images\Menus\CCF20935-20E8-4E0A-B189-87DE6011085B.png" />
+    <Content Include="Images\Menus\2F7426AC-6ABD-47D7-B1FA-EC9790DEF010.png" />
+    <Content Include="Images\Menus\667D3545-AE50-4813-B930-F825D2FEF5C4.png" />
     <Content Include="Images\Menus\E52D9F9F-30E0-49F4-BD4A-F9EEF7C01466.png" />
     <Content Include="Images\Menus\D737A4D7-B162-4C16-80BC-AF58223327CF.png" />
     <Content Include="Images\Menus\C2B6BAAA-0CF7-4BA8-BB29-FEF6FCA8FCFB.png" />
@@ -391,6 +429,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201412080650410_migration12.resx">
       <DependentUpon>201412080650410_migration12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412081101326_migration13.resx">
+      <DependentUpon>201412081101326_migration13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412081102355_migration14.resx">
+      <DependentUpon>201412081102355_migration14.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
