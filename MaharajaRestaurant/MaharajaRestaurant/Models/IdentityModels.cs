@@ -1,4 +1,10 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Data.Entity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using MaharajaRestaurant.DAL;
 
 
 namespace MaharajaRestaurant.Models
@@ -15,7 +21,7 @@ namespace MaharajaRestaurant.Models
         public string Street2 { get; set; }
         public string Suburb { get; set; }
         public string State { get; set; }
-        public string PostCode { get; set; }
+        public string PostCodes { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -23,6 +29,9 @@ namespace MaharajaRestaurant.Models
         public ApplicationDbContext()
             : base("DefaultConnection")
         {
+            
         }
+        public DbSet<Menu> Menus { get; set; }
+        public DbSet<PhotoMenu> PhotoMenus { get; set; }
     }
 }

@@ -179,13 +179,64 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\REST\ReservationController.cs" />
     <Compile Include="DAL\Enums.cs" />
-    <Compile Include="DAL\MaharajasDBContext.cs" />
+    <Compile Include="DAL\PhotoMenu.cs" />
     <Compile Include="DAL\Menu.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\ApplicationDbContext_Configuration\Configuration.cs" />
-    <Compile Include="Migrations\MaharajasDBContext_Configuration\Configuration.cs" />
+    <Compile Include="Migrations\201412080459079_migration.cs" />
+    <Compile Include="Migrations\201412080459079_migration.Designer.cs">
+      <DependentUpon>201412080459079_migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412080501205_migration1.cs" />
+    <Compile Include="Migrations\201412080501205_migration1.Designer.cs">
+      <DependentUpon>201412080501205_migration1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412080504588_migration2.cs" />
+    <Compile Include="Migrations\201412080504588_migration2.Designer.cs">
+      <DependentUpon>201412080504588_migration2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412080533116_migration3.cs" />
+    <Compile Include="Migrations\201412080533116_migration3.Designer.cs">
+      <DependentUpon>201412080533116_migration3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412080537157_migration4.cs" />
+    <Compile Include="Migrations\201412080537157_migration4.Designer.cs">
+      <DependentUpon>201412080537157_migration4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412080538485_migration5.cs" />
+    <Compile Include="Migrations\201412080538485_migration5.Designer.cs">
+      <DependentUpon>201412080538485_migration5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412080540570_migration6.cs" />
+    <Compile Include="Migrations\201412080540570_migration6.Designer.cs">
+      <DependentUpon>201412080540570_migration6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412080542337_migration7.cs" />
+    <Compile Include="Migrations\201412080542337_migration7.Designer.cs">
+      <DependentUpon>201412080542337_migration7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412080545321_migration8.cs" />
+    <Compile Include="Migrations\201412080545321_migration8.Designer.cs">
+      <DependentUpon>201412080545321_migration8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412080609549_migration9.cs" />
+    <Compile Include="Migrations\201412080609549_migration9.Designer.cs">
+      <DependentUpon>201412080609549_migration9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412080613404_migration10.cs" />
+    <Compile Include="Migrations\201412080613404_migration10.Designer.cs">
+      <DependentUpon>201412080613404_migration10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412080650052_migration11.cs" />
+    <Compile Include="Migrations\201412080650052_migration11.Designer.cs">
+      <DependentUpon>201412080650052_migration11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412080650410_migration12.cs" />
+    <Compile Include="Migrations\201412080650410_migration12.Designer.cs">
+      <DependentUpon>201412080650410_migration12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\REST\Reservation\inReservationModel.cs" />
@@ -202,6 +253,23 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\Boxes\300x300-Box.png" />
+    <Content Include="Images\Menus\756A933D-08D0-4201-A8B4-EFB6F42A895F.png" />
+    <Content Include="Images\Menus\795123A9-E5D6-4D58-B304-33110D065A0D.png" />
+    <Content Include="Images\Menus\D04AB26D-9CB9-47A0-A9AC-C876F6F2E868.png" />
+    <Content Include="Images\Menus\17950D52-F989-40B9-8B19-DFA0FA45AB7F.png" />
+    <Content Include="Images\Menus\E52D9F9F-30E0-49F4-BD4A-F9EEF7C01466 - Copy %2810%29.png" />
+    <Content Include="Images\Menus\E52D9F9F-30E0-49F4-BD4A-F9EEF7C01466 - Copy %282%29.png" />
+    <Content Include="Images\Menus\E52D9F9F-30E0-49F4-BD4A-F9EEF7C01466 - Copy %283%29.png" />
+    <Content Include="Images\Menus\E52D9F9F-30E0-49F4-BD4A-F9EEF7C01466 - Copy %284%29.png" />
+    <Content Include="Images\Menus\E52D9F9F-30E0-49F4-BD4A-F9EEF7C01466 - Copy %285%29.png" />
+    <Content Include="Images\Menus\E52D9F9F-30E0-49F4-BD4A-F9EEF7C01466 - Copy %286%29.png" />
+    <Content Include="Images\Menus\E52D9F9F-30E0-49F4-BD4A-F9EEF7C01466 - Copy %287%29.png" />
+    <Content Include="Images\Menus\E52D9F9F-30E0-49F4-BD4A-F9EEF7C01466 - Copy %288%29.png" />
+    <Content Include="Images\Menus\E52D9F9F-30E0-49F4-BD4A-F9EEF7C01466 - Copy %289%29.png" />
+    <Content Include="Images\Menus\E52D9F9F-30E0-49F4-BD4A-F9EEF7C01466 - Copy.png" />
+    <Content Include="Images\Menus\E52D9F9F-30E0-49F4-BD4A-F9EEF7C01466.png" />
+    <Content Include="Images\Menus\D737A4D7-B162-4C16-80BC-AF58223327CF.png" />
+    <Content Include="Images\Menus\C2B6BAAA-0CF7-4BA8-BB29-FEF6FCA8FCFB.png" />
     <Content Include="Images\Sliders\1.png" />
     <Content Include="Images\Sliders\2.png" />
     <Content Include="Images\Sliders\3.png" />
@@ -283,6 +351,47 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201412080459079_migration.resx">
+      <DependentUpon>201412080459079_migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412080501205_migration1.resx">
+      <DependentUpon>201412080501205_migration1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412080504588_migration2.resx">
+      <DependentUpon>201412080504588_migration2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412080533116_migration3.resx">
+      <DependentUpon>201412080533116_migration3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412080537157_migration4.resx">
+      <DependentUpon>201412080537157_migration4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412080538485_migration5.resx">
+      <DependentUpon>201412080538485_migration5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412080540570_migration6.resx">
+      <DependentUpon>201412080540570_migration6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412080542337_migration7.resx">
+      <DependentUpon>201412080542337_migration7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412080545321_migration8.resx">
+      <DependentUpon>201412080545321_migration8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412080609549_migration9.resx">
+      <DependentUpon>201412080609549_migration9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412080613404_migration10.resx">
+      <DependentUpon>201412080613404_migration10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412080650052_migration11.resx">
+      <DependentUpon>201412080650052_migration11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412080650410_migration12.resx">
+      <DependentUpon>201412080650410_migration12.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -11,6 +11,8 @@ namespace MaharajaRestaurant.DAL
         Main_Course = 1,
         Breads_and_Rice = 2,
         Side_Dishes = 3,
-        Desserts = 4
+        Desserts = 4,
+        Drinks = 5
     }
+
 }
