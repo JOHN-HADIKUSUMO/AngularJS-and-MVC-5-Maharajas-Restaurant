@@ -11,14 +11,14 @@ namespace MaharajaRestaurant.Migrations
     using MaharajaRestaurant.Models;
     using MaharajaRestaurant.DAL;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<MaharajaRestaurant.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<MaharajaRestaurant.DAL.MaharajasDbContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(MaharajaRestaurant.Models.ApplicationDbContext context)
+        protected override void Seed(MaharajaRestaurant.DAL.MaharajasDbContext context)
         {
             if (!context.Roles.Any(r => r.Name.ToUpper() == "ADMINISTRATOR"))
             {

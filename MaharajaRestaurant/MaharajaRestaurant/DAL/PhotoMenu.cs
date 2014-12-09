@@ -13,7 +13,7 @@ namespace MaharajaRestaurant.DAL
     public class PhotoMenu
     {
         [Key]
-        public int PhotoID { get; set; }
+        public int PhotoMenuID { get; set; }
         public int MenuID { get; set; }
         public string Filename { get; set; }
         public string GUIDFilename { get; set; }

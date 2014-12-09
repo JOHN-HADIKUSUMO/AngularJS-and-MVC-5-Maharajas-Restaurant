@@ -48,6 +48,15 @@
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.3.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.WebApi">
+      <HintPath>..\packages\Ninject.Web.WebApi.3.2.3.0\lib\net45-full\Ninject.Web.WebApi.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -117,6 +126,9 @@
       <Private>True</Private>
       <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="WebActivatorEx">
+      <HintPath>..\packages\WebActivatorEx.2.0.6\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -170,6 +182,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -179,74 +192,28 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\REST\ReservationController.cs" />
     <Compile Include="DAL\Enums.cs" />
+    <Compile Include="DAL\Interfaces\IMaharajasDBContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAL\MaharajasDbContext.cs" />
+    <Compile Include="DAL\Interfaces\ICRAUD.cs" />
+    <Compile Include="DAL\Interfaces\IPhotoMenusService.cs" />
+    <Compile Include="DAL\Interfaces\IMenusService.cs" />
     <Compile Include="DAL\PhotoMenu.cs" />
     <Compile Include="DAL\Menu.cs" />
+    <Compile Include="DAL\Services\MenusService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAL\Services\PhotoMenusService.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201412080459079_migration.cs" />
-    <Compile Include="Migrations\201412080459079_migration.Designer.cs">
-      <DependentUpon>201412080459079_migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412080501205_migration1.cs" />
-    <Compile Include="Migrations\201412080501205_migration1.Designer.cs">
-      <DependentUpon>201412080501205_migration1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412080504588_migration2.cs" />
-    <Compile Include="Migrations\201412080504588_migration2.Designer.cs">
-      <DependentUpon>201412080504588_migration2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412080533116_migration3.cs" />
-    <Compile Include="Migrations\201412080533116_migration3.Designer.cs">
-      <DependentUpon>201412080533116_migration3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412080537157_migration4.cs" />
-    <Compile Include="Migrations\201412080537157_migration4.Designer.cs">
-      <DependentUpon>201412080537157_migration4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412080538485_migration5.cs" />
-    <Compile Include="Migrations\201412080538485_migration5.Designer.cs">
-      <DependentUpon>201412080538485_migration5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412080540570_migration6.cs" />
-    <Compile Include="Migrations\201412080540570_migration6.Designer.cs">
-      <DependentUpon>201412080540570_migration6.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412080542337_migration7.cs" />
-    <Compile Include="Migrations\201412080542337_migration7.Designer.cs">
-      <DependentUpon>201412080542337_migration7.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412080545321_migration8.cs" />
-    <Compile Include="Migrations\201412080545321_migration8.Designer.cs">
-      <DependentUpon>201412080545321_migration8.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412080609549_migration9.cs" />
-    <Compile Include="Migrations\201412080609549_migration9.Designer.cs">
-      <DependentUpon>201412080609549_migration9.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412080613404_migration10.cs" />
-    <Compile Include="Migrations\201412080613404_migration10.Designer.cs">
-      <DependentUpon>201412080613404_migration10.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412080650052_migration11.cs" />
-    <Compile Include="Migrations\201412080650052_migration11.Designer.cs">
-      <DependentUpon>201412080650052_migration11.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412080650410_migration12.cs" />
-    <Compile Include="Migrations\201412080650410_migration12.Designer.cs">
-      <DependentUpon>201412080650410_migration12.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412081101326_migration13.cs" />
-    <Compile Include="Migrations\201412081101326_migration13.Designer.cs">
-      <DependentUpon>201412081101326_migration13.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412081102355_migration14.cs" />
-    <Compile Include="Migrations\201412081102355_migration14.Designer.cs">
-      <DependentUpon>201412081102355_migration14.cs</DependentUpon>
+    <Compile Include="Migrations\201412090405137_migration.cs" />
+    <Compile Include="Migrations\201412090405137_migration.Designer.cs">
+      <DependentUpon>201412090405137_migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\REST\Reservation\inReservationModel.cs" />
     <Compile Include="Models\REST\Reservation\yourDetailModel.cs" />
     <Compile Include="Models\REST\Reservation\yourEventModel.cs" />
@@ -254,7 +221,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CCF20935-20E8-4E0A-B189-87DE6011085B.png" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -391,50 +357,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201412080459079_migration.resx">
-      <DependentUpon>201412080459079_migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412080501205_migration1.resx">
-      <DependentUpon>201412080501205_migration1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412080504588_migration2.resx">
-      <DependentUpon>201412080504588_migration2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412080533116_migration3.resx">
-      <DependentUpon>201412080533116_migration3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412080537157_migration4.resx">
-      <DependentUpon>201412080537157_migration4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412080538485_migration5.resx">
-      <DependentUpon>201412080538485_migration5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412080540570_migration6.resx">
-      <DependentUpon>201412080540570_migration6.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412080542337_migration7.resx">
-      <DependentUpon>201412080542337_migration7.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412080545321_migration8.resx">
-      <DependentUpon>201412080545321_migration8.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412080609549_migration9.resx">
-      <DependentUpon>201412080609549_migration9.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412080613404_migration10.resx">
-      <DependentUpon>201412080613404_migration10.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412080650052_migration11.resx">
-      <DependentUpon>201412080650052_migration11.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412080650410_migration12.resx">
-      <DependentUpon>201412080650410_migration12.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412081101326_migration13.resx">
-      <DependentUpon>201412081101326_migration13.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412081102355_migration14.resx">
-      <DependentUpon>201412081102355_migration14.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201412090405137_migration.resx">
+      <DependentUpon>201412090405137_migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
