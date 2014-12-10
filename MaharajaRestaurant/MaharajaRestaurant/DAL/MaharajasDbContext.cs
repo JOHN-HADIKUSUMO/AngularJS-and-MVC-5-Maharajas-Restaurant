@@ -34,16 +34,8 @@ namespace MaharajaRestaurant.DAL
         }
         public DbSet<Menu> Menus { get; set; }
         public DbSet<PhotoMenu> PhotoMenus { get; set; }
+        //public DbSet<Test> Tests { get; set; }
+
+
     }
-
-    //public class MaharajasDbContext : IdentityDbContext<ApplicationUser>
-    //{
-    //    public MaharajasDbContext()
-    //        : base("DefaultConnection")
-    //    {
-
-    //    }
-    //    public DbSet<Menu> Menus { get; set; }
-    //    public DbSet<PhotoMenu> PhotoMenus { get; set; }
-    //}
 }

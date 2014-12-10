@@ -54,6 +54,9 @@
     <Reference Include="Ninject.Web.Common">
       <HintPath>..\packages\Ninject.Web.Common.3.2.3.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
     </Reference>
+    <Reference Include="Ninject.Web.Mvc">
+      <HintPath>D:\Miniadverts\MiniAdverts\MiniAdverts\bin\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Ninject.Web.WebApi">
       <HintPath>..\packages\Ninject.Web.WebApi.3.2.3.0\lib\net45-full\Ninject.Web.WebApi.dll</HintPath>
     </Reference>
@@ -186,37 +189,43 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Business\Interfaces\ILibrary.cs" />
+    <Compile Include="Business\Interfaces\IMenusLibrary.cs" />
+    <Compile Include="Business\Interfaces\IPhotoMenusLibrary.cs" />
+    <Compile Include="Business\Library.cs" />
+    <Compile Include="Business\MenusLibrary.cs" />
+    <Compile Include="Business\PhotoMenusLibrary.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ReservationController.cs" />
     <Compile Include="Controllers\MenusController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\REST\MenusController.cs" />
     <Compile Include="Controllers\REST\ReservationController.cs" />
     <Compile Include="DAL\Enums.cs" />
     <Compile Include="DAL\Interfaces\IMaharajasDBContext.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DAL\Interfaces\IMenusService.cs" />
+    <Compile Include="DAL\Interfaces\IPhotoMenusService.cs" />
     <Compile Include="DAL\MaharajasDbContext.cs" />
     <Compile Include="DAL\Interfaces\ICRAUD.cs" />
-    <Compile Include="DAL\Interfaces\IPhotoMenusService.cs" />
-    <Compile Include="DAL\Interfaces\IMenusService.cs" />
     <Compile Include="DAL\PhotoMenu.cs" />
     <Compile Include="DAL\Menu.cs" />
-    <Compile Include="DAL\Services\MenusService.cs">
+    <Compile Include="DAL\Services\MenusService.cs" />
+    <Compile Include="DAL\Services\PhotoMenusService.cs" />
+    <Compile Include="DAL\Test.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DAL\Services\PhotoMenusService.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412090405137_migration.cs" />
-    <Compile Include="Migrations\201412090405137_migration.Designer.cs">
-      <DependentUpon>201412090405137_migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\REST\Reservation\inReservationModel.cs" />
     <Compile Include="Models\REST\Reservation\yourDetailModel.cs" />
     <Compile Include="Models\REST\Reservation\yourEventModel.cs" />
+    <Compile Include="Ninject\NinjectResolver.cs" />
+    <Compile Include="Ninject\NinjectScope.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -355,11 +364,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201412090405137_migration.resx">
-      <DependentUpon>201412090405137_migration.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

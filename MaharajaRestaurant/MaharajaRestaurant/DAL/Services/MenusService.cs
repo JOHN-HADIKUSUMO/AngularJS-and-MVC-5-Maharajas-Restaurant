@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Threading.Tasks;
 using MaharajaRestaurant.DAL;
 using MaharajaRestaurant.DAL.Interfaces;
 
@@ -27,6 +28,15 @@ namespace MaharajaRestaurant.DAL.Services
             return this.dbcontext.Menus.Where(w => w.MenuID == id).FirstOrDefault();
         }
 
+        public Task<IQueryable<Menu>> ReadAllAsync(MenusType menutype)
+        {
+            return Task.FromResult(this.dbcontext.Menus.Where(w => w.Type == menutype).OrderBy(o => o.Name).AsQueryable<Menu>());
+        }
+
+        public IQueryable<Menu> ReadAll(MenusType menutype)
+        {
+            return this.dbcontext.Menus.Where(w => w.Type == menutype).OrderBy(o => o.Name).AsQueryable<Menu>();
+        }
         public IQueryable<Menu> ReadAll()
         {
             return this.dbcontext.Menus.AsQueryable<Menu>();

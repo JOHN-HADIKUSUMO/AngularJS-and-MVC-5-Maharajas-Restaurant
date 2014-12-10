@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Ninject.MVC</id>
+    <version>3.2.0</version>
+    <title>Ninject.MVC</title>
+    <authors>Richard Sanchez</authors>
+    <owners>Richard Sanchez</owners>
+    <licenseUrl>http://radtec.com/NuGet/NinjectMVC/License</licenseUrl>
+    <projectUrl>http://radtec.com/NuGet/NinjectMVC</projectUrl>
+    <iconUrl>http://radtec.com/NuGet/NinjectMVC/Icon</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A Ninject Binder for ASP.Net MVC</description>
+    <copyright>Copyright 2014</copyright>
+    <tags>Ninject ASP.Net MVC Binder net40 net45</tags>
+  </metadata>
+</package>
