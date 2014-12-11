@@ -15,4 +15,10 @@ namespace MaharajaRestaurant.DAL
         Drinks = 5
     }
 
+
+    public enum DocumentsType
+    {
+        Terms_and_Conditions = 0,
+        Privacy_Policy = 1
+    }
 }

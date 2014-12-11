@@ -9,7 +9,7 @@
                 contentType: 'application/json; charset=utf-8',
                 data: JSON.stringify(d),
                 success: function (d) {
-                    alert('a');
+                    alert('Success');
                 },
                 error: function (request) {
                     alert('elor');
