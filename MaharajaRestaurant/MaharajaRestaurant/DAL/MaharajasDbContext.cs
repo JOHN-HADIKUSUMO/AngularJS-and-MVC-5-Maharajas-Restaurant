@@ -23,6 +23,8 @@ namespace MaharajaRestaurant.DAL
         public string Suburb { get; set; }
         public string State { get; set; }
         public string PostCodes { get; set; }
+
+        public virtual ICollection<Reservation> Reservations { get; set; }
     }
 
     public class MaharajasDbContext : IdentityDbContext<ApplicationUser>, IMaharajasDBContext

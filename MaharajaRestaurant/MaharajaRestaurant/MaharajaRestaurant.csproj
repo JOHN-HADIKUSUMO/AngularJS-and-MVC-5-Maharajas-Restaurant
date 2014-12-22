@@ -210,13 +210,11 @@
     <Compile Include="DAL\Interfaces\IPhotoMenusService.cs" />
     <Compile Include="DAL\MaharajasDbContext.cs" />
     <Compile Include="DAL\Interfaces\ICRAUD.cs" />
+    <Compile Include="DAL\Reservation.cs" />
     <Compile Include="DAL\PhotoMenu.cs" />
     <Compile Include="DAL\Menu.cs" />
     <Compile Include="DAL\Services\MenusService.cs" />
     <Compile Include="DAL\Services\PhotoMenusService.cs" />
-    <Compile Include="DAL\Test.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

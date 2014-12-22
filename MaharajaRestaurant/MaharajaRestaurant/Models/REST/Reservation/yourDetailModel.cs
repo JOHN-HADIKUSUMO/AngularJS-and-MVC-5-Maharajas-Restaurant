@@ -12,7 +12,8 @@ namespace MaharajaRestaurant.Models.REST.Reservation
         public string lastname { get; set; }
         public string email { get; set; }
         public string mobile { get; set; }
-        public string firsttimecustomer { get; set; }
+        public bool firsttimecustomer { get; set; }
+        public string username { get; set; }
         public string password { get; set; }
         public string conpassword { get; set; }
     }

@@ -1,15 +1,8 @@
 ﻿maharajasApp.controller('reservationController', function reservationController($scope, reservationService) {
     $scope.booking = {
-        yourdetail: { title: undefined, firstname: undefined, lastname: undefined, email: undefined, mobile: undefined, firsttimecustomer: 0,username:undefined, password: undefined, conpassword: undefined },
+        yourdetail: { title: undefined, firstname: undefined, lastname: undefined, email: undefined, mobile: undefined, firsttimecustomer: 'false', username: undefined, password: undefined, conpassword: undefined },
         yourevent: { name: undefined, day: 1, month: 1, year: 2014, numberofpeople: '1-5', environtment: 0, paymentmethod: 0 }
-    }
-
-    //for testing only
-    //$scope.booking = {
-    //    yourdetail: { title: 'Mr', firstname: 'John', lastname: 'Doe', email: 'john.doe@hotmail.com', mobile: '043104420', firsttimecustomer: 1, username: undefined, password: 'asdQWE!@#', conpassword: 'asdQWE!@#' },
-    //    yourevent: { name: 'My Sister Birthday', day: 21, month: 12, year: 2014, numberofpeople: '1-5', environtment: 1, paymentmethod: 1 }
-    //}
-
+    };
     $scope.titleoptions = ['Mr', 'Mrs', 'Ms', 'Sir', 'Madam'];
     $scope.dayoptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
     $scope.monthoptions = [
@@ -92,6 +85,12 @@
             fn.next().removeClass('sr-only');
             fn.next().html('username must be provided.');
         }
+        else if ($.trim($scope.booking.yourdetail.mobile) == '') {
+            var fn = $('#mobile');
+            fn.parent().addClass('has-error')
+            fn.next().removeClass('sr-only');
+            fn.next().html('mobile must be provided.');
+        }
         else if ($.trim($scope.booking.yourdetail.firsttimecustomer) == '1' && $.trim($('#password').val()) == '') {
             var fn = $('#password');
             fn.parent().addClass('has-error')
@@ -123,7 +122,7 @@
         }
     };
     $scope.removeallerror = function () {
-        var str = 'firstname,lastname,email,password,conpassword,eventname,username';
+        var str = 'firstname,lastname,email,password,conpassword,eventname,username,mobile';
         var item = str.split(',');
         for (var i = 0; i < item.length; i++) {
             $scope.removeerror(item[i]);

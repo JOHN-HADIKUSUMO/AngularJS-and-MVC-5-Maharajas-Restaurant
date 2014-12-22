@@ -21,7 +21,9 @@ namespace MaharajaRestaurant
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js",
+                      "~/Scripts/bootbox.js"
+                      ));
 
             bundles.Add(new ScriptBundle("~/bundles/angularjs").Include(
                       "~/Scripts/angular.js",
