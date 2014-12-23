@@ -12,5 +12,6 @@ namespace MaharajaRestaurant.DAL.Interfaces
     {
         DbSet<Menu> Menus { get; set; }
         DbSet<PhotoMenu> PhotoMenus { get; set; }
+        DbSet<Reservation> Reservations { get; set; }
     }
 }

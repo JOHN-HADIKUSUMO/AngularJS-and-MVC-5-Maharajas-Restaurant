@@ -3,13 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MaharajaRestaurant.Business;
+using MaharajaRestaurant.Business.Interfaces;
 
 namespace MaharajaRestaurant.Controllers
 {
     [RoutePrefix("Menus")]
     [AllowAnonymous]
-    public class MenusController : Controller
+    public class MenusController : Base
     {
+        public MenusController(ILibrary library)
+            : base(library)
+        {
+
+        }
         [Route("{category}")]
         public ActionResult Index(string category)
         {

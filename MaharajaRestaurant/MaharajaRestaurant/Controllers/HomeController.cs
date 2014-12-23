@@ -10,15 +10,9 @@ using MaharajaRestaurant.Business.Interfaces;
 
 namespace MaharajaRestaurant.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController:Base
     {
-        private ILibrary library;
-        public HomeController(ILibrary library)
-        {
-            this.library = library;
-        }
-
-        public HomeController()
+        public HomeController(ILibrary library):base(library)
         {
 
         }

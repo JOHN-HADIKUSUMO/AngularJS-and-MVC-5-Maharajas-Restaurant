@@ -4,14 +4,21 @@ using System.Linq;
 using System.IO;
 using System.Web;
 using System.Web.Mvc;
+using MaharajaRestaurant.Business;
+using MaharajaRestaurant.Business.Interfaces;
 using MaharajaRestaurant.DAL;
 
-namespace ReservationController.Controllers
+namespace MaharajaRestaurant.Controllers
 {
     [RoutePrefix("Documents")]
     [AllowAnonymous]
-    public class DocumentsController : Controller
+    public class DocumentsController : Base
     {
+        public DocumentsController(ILibrary library):base(library)
+        {
+
+        }
+
         [Route("{title}")]
         public FileContentResult Index(string title)
         {

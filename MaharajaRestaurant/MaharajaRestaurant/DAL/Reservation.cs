@@ -22,7 +22,9 @@ namespace MaharajaRestaurant.DAL
         public Nullable<DateTime> CreatedDate { get; set; }
         public Nullable<bool> IsDeleted { get; set; }
         public Nullable<DateTime> DeletedDate { get; set; }
-        public virtual ApplicationUser Customer { get; set; }
+        [ForeignKey("ApplicationUser")]
+        public virtual string UserID { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
 
     }
 }

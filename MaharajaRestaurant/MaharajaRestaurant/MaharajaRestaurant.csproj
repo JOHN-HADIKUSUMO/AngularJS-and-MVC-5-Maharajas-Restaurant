@@ -197,16 +197,21 @@
     <Compile Include="Business\PhotoMenusLibrary.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DocumentsController.cs" />
+    <Compile Include="Controllers\Base.cs" />
     <Compile Include="Controllers\ReservationController.cs" />
     <Compile Include="Controllers\MenusController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\REST\MenusController.cs" />
+    <Compile Include="Controllers\REST\Base.cs" />
     <Compile Include="Controllers\REST\ReservationController.cs" />
+    <Compile Include="Custom\CustomUserStore.cs" />
+    <Compile Include="Custom\CustomUserManager.cs" />
     <Compile Include="DAL\Enums.cs" />
     <Compile Include="DAL\Interfaces\IMaharajasDBContext.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DAL\Interfaces\IMenusService.cs" />
+    <Compile Include="DAL\Interfaces\IReservationsService.cs" />
     <Compile Include="DAL\Interfaces\IPhotoMenusService.cs" />
     <Compile Include="DAL\MaharajasDbContext.cs" />
     <Compile Include="DAL\Interfaces\ICRAUD.cs" />
@@ -214,6 +219,7 @@
     <Compile Include="DAL\PhotoMenu.cs" />
     <Compile Include="DAL\Menu.cs" />
     <Compile Include="DAL\Services\MenusService.cs" />
+    <Compile Include="DAL\Services\ReservationsService.cs" />
     <Compile Include="DAL\Services\PhotoMenusService.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

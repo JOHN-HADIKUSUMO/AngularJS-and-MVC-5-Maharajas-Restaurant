@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.ComponentModel.DataAnnotations.Schema;
 using MaharajaRestaurant.Models;
 using MaharajaRestaurant.DAL;
 using MaharajaRestaurant.DAL.Interfaces;
@@ -34,9 +36,18 @@ namespace MaharajaRestaurant.DAL
         {
 
         }
+
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
+        }
+
         public DbSet<Menu> Menus { get; set; }
         public DbSet<PhotoMenu> PhotoMenus { get; set; }
-        //public DbSet<Test> Tests { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
 
 
     }

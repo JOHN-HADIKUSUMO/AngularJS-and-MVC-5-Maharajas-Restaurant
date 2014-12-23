@@ -5,6 +5,9 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Threading.Tasks;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using MaharajaRestaurant.Custom;
 using MaharajaRestaurant.Models;
 using MaharajaRestaurant.Models.REST.Reservation;
 using MaharajaRestaurant.DAL;
@@ -15,21 +18,51 @@ using MaharajaRestaurant.Business.Interfaces;
 namespace MaharajaRestaurant.Controllers.REST
 {
     [RoutePrefix("REST/RESERVATION")]
-    public class ReservationController : ApiController
+    public class ReservationController:Base
     {
-        private ILibrary library;
-        public ReservationController(ILibrary library)
+        private CustomUserManager usermanager;
+        public ReservationController(ILibrary library):base(library)
         {
             this.library = library;
+            usermanager = new CustomUserManager();
         }
 
         [HttpPost]
         [AcceptVerbs("POST")]
         [Route("Create")]
-        public async Task<int> Create(inReservationModel model)
+        public Task<HttpResponseMessage> Create(inReservationModel model)
         {
+            HttpResponseMessage response = new HttpResponseMessage();
+            if(model.yourdetail.firsttimecustomer)
+            {
+                bool checkusername = this.usermanager.FindByUsernameAsync(model.yourdetail.username).Result;
+
+                if (checkusername)
+                {
+                    response = Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Username " + model.yourdetail.username + " has been used.");
+                    return Task.FromResult<HttpResponseMessage>(response);
+                }
+
+                bool checkemail = this.usermanager.FindByEmailAsync(model.yourdetail.email).Result;
+
+                if (checkemail)
+                {
+                    string test = "Here";
+                }
+
+                ApplicationUser appuser = new ApplicationUser() { UserName = model.yourdetail.username };
+                var result = this.usermanager.CreateAsync(appuser, model.yourdetail.password);
+                if (!result.Result.Succeeded)
+                {
+                    response = Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Fail to create user account " + model.yourdetail.username);
+                    return Task.FromResult<HttpResponseMessage>(response);
+                }
+            }
+
+            Reservation reservation = new Reservation();
+
             
-            return await Task.FromResult<int>(20);
+            return Task.FromResult<HttpResponseMessage>(response);
         }
     }
 }

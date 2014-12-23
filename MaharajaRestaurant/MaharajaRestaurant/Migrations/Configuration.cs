@@ -664,6 +664,59 @@ namespace MaharajaRestaurant.Migrations
                 context.PhotoMenus.AddOrUpdate(photo27_3);
                 context.SaveChanges();
             }
+
+            /* Seeding the Reservation table */
+            if(context.Reservations.Count() == 0)
+            {
+                Reservation reservation_0 = new Reservation();
+                reservation_0.UserID = context.Users.Where(w => w.UserName.Contains("happycustomer")).FirstOrDefault().Id;
+                reservation_0.PaymentMethod = 0;
+                reservation_0.NumberOfPeople = "1-5";
+                reservation_0.Name = "Gracias Birthday Party";
+                reservation_0.Environment = 1;
+                reservation_0.Date = new DateTime(2014, 12, 31, 17, 30, 0);
+                reservation_0.CreatedDate = DateTime.Today;
+
+                context.Reservations.Add(reservation_0);
+
+
+                Reservation reservation_1 = new Reservation();
+                reservation_1.UserID = context.Users.Where(w => w.UserName.Contains("happycustomer")).FirstOrDefault().Id;
+                reservation_1.PaymentMethod = 1;
+                reservation_1.NumberOfPeople = "1-5";
+                reservation_1.Name = "Reno and Pete Wedding";
+                reservation_1.Environment = 0;
+                reservation_1.Date = new DateTime(2015, 1, 10, 10, 0, 0);
+                reservation_1.CreatedDate = DateTime.Today;
+
+                context.Reservations.Add(reservation_1);
+
+
+                Reservation reservation_2 = new Reservation();
+                reservation_2.UserID = context.Users.Where(w => w.UserName.Contains("happycustomer")).FirstOrDefault().Id;
+                reservation_2.PaymentMethod = 2;
+                reservation_2.NumberOfPeople = "5-10";
+                reservation_2.Name = "Rianka Baptism";
+                reservation_2.Environment = 1;
+                reservation_2.Date = new DateTime(2015, 3, 18, 10, 0, 0);
+                reservation_2.CreatedDate = DateTime.Today;
+
+                context.Reservations.Add(reservation_2);
+
+                Reservation reservation_3 = new Reservation();
+                reservation_3.UserID = context.Users.Where(w => w.UserName.Contains("happycustomer")).FirstOrDefault().Id;
+                reservation_3.PaymentMethod = 0;
+                reservation_3.NumberOfPeople = "20-40";
+                reservation_3.Name = "Martinsen Bachelor Party";
+                reservation_3.Environment = 1;
+                reservation_3.Date = new DateTime(2015, 2, 10, 20, 0, 0);
+                reservation_3.CreatedDate = DateTime.Today;
+
+                context.Reservations.Add(reservation_3);
+
+                context.SaveChanges();
+
+            }
         }
 
     }
