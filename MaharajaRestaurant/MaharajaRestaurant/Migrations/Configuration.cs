@@ -42,7 +42,7 @@ namespace MaharajaRestaurant.Migrations
             {
                 var store = new UserStore<ApplicationUser>(context);
                 var manager = new UserManager<ApplicationUser>(store);
-                var user = new ApplicationUser { UserName = "administrator" };
+                var user = new ApplicationUser { UserName = "administrator",Email = "administrator@maharajasrestaurant.com.au" };
 
                 manager.Create(user, "asdQWE!@#");
                 manager.AddToRole(user.Id, "ADMINISTRATOR");
@@ -52,7 +52,7 @@ namespace MaharajaRestaurant.Migrations
             {
                 var store = new UserStore<ApplicationUser>(context);
                 var manager = new UserManager<ApplicationUser>(store);
-                var user = new ApplicationUser { UserName = "happycustomer" };
+                var user = new ApplicationUser { UserName = "happycustomer", Email = "happycustomer@maharajasrestaurant.com.au" };
 
                 manager.Create(user, "asdQWE!@#");
                 manager.AddToRole(user.Id, "CUSTOMER");
