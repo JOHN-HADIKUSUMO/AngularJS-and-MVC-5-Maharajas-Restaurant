@@ -16,5 +16,10 @@ namespace MaharajaRestaurant.Models.REST.Reservation
         public string username { get; set; }
         public string password { get; set; }
         public string conpassword { get; set; }
+        public string street1 { get; set; }
+        public string street2 { get; set; }
+        public string suburb { get; set; }
+        public string state { get; set; }
+        public string postcode { get; set; }
     }
 }

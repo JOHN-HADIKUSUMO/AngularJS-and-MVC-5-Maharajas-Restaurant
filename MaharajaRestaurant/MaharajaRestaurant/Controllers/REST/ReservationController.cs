@@ -47,12 +47,13 @@ namespace MaharajaRestaurant.Controllers.REST
 
                 if (checkemail)
                 {
-                    string test = "Here";
+                    response = Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Email " + model.yourdetail.email + " has been used.");
+                    return Task.FromResult<HttpResponseMessage>(response);
                 }
 
-                ApplicationUser appuser = new ApplicationUser() { UserName = model.yourdetail.username };
-                var result = this.usermanager.CreateAsync(appuser, model.yourdetail.password);
-                if (!result.Result.Succeeded)
+                ApplicationUser appuser = new ApplicationUser() { UserName = model.yourdetail.username,Email = model.yourdetail.email,Title = model.yourdetail.title,Firstname = model.yourdetail.lastname,Mobile = model.yourdetail.email };
+                var result = this.usermanager.CreateAsync(appuser,model.yourdetail.email, model.yourdetail.password);
+                if (!result.Result)
                 {
                     response = Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Fail to create user account " + model.yourdetail.username);
                     return Task.FromResult<HttpResponseMessage>(response);

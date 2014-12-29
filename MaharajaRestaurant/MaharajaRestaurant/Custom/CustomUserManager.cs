@@ -25,10 +25,26 @@ namespace MaharajaRestaurant.Custom
 
         }
 
-        public override Task<IdentityResult> CreateAsync(ApplicationUser user, string password)
+        public Task<bool> CreateAsync(ApplicationUser user,string email, string password)
         {
+            user.Email = email;
+            user.PasswordHash = PasswordHasher.HashPassword(password);
+            user.SecurityStamp = Guid.NewGuid().ToString();
+            IdentityUserRole role = new IdentityUserRole();
             this.customuserstore.CreateAsync(user);
-            return null;
+
+            Task<ApplicationUser> tempuser = this.customuserstore.FindByNameAsync(user.UserName);
+
+            if(tempuser != null)
+            {
+                IdentityUserRole temprole =  new IdentityUserRole();
+                temprole.UserId = tempuser.Result.Id;
+                temprole.RoleId = "6f1345dd-26f6-4967-a326-c227b8d8b2df";/* Hard coded */
+                tempuser.Result.Roles.Add(temprole);
+                this.customuserstore.UpdateAsync(tempuser.Result);
+            }
+
+            return Task.FromResult<bool>(true);
         }
 
         public virtual Task<bool> FindByUsernameAsync(string username)
