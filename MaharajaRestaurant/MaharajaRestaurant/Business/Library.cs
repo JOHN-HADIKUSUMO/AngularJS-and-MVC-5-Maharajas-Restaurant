@@ -14,10 +14,12 @@ namespace MaharajaRestaurant.Business
     {
         private IMenusLibrary menulib;
         private IPhotoMenusLibrary photomenulib;
-        public Library(IMenusLibrary menulib,IPhotoMenusLibrary photomenulib)
+        private IReservationsLibrary reservationlib;
+        public Library(IMenusLibrary menulib,IPhotoMenusLibrary photomenulib,IReservationsLibrary reservationlib)
         {
             this.menulib = menulib;
             this.photomenulib = photomenulib;
+            this.reservationlib = reservationlib;
         }
 
         public IMenusLibrary MenusLib
@@ -41,6 +43,19 @@ namespace MaharajaRestaurant.Business
             set
             {
                 this.photomenulib = value;
+            }
+        }
+
+
+        public IReservationsLibrary ReservationsLib
+        {
+            get
+            {
+                return reservationlib;
+            }
+            set
+            {
+                reservationlib = value;
             }
         }
     }

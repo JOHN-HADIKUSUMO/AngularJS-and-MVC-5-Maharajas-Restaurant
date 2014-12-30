@@ -191,9 +191,11 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Business\Interfaces\ILibrary.cs" />
     <Compile Include="Business\Interfaces\IMenusLibrary.cs" />
+    <Compile Include="Business\Interfaces\IReservationsLibrary.cs" />
     <Compile Include="Business\Interfaces\IPhotoMenusLibrary.cs" />
     <Compile Include="Business\Library.cs" />
     <Compile Include="Business\MenusLibrary.cs" />
+    <Compile Include="Business\ReservationsLibrary.cs" />
     <Compile Include="Business\PhotoMenusLibrary.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DocumentsController.cs" />

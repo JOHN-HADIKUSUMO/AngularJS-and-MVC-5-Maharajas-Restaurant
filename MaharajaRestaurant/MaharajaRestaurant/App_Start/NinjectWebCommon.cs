@@ -74,6 +74,8 @@ namespace MaharajaRestaurant
             kernel.Bind<IPhotoMenusService>().To<PhotoMenusService>();
             kernel.Bind<IMenusLibrary>().To<MenusLibrary>();
             kernel.Bind<IPhotoMenusLibrary>().To<PhotoMenusLibrary>();
+            kernel.Bind<IReservationsService>().To<ReservationsService>();
+            kernel.Bind<IReservationsLibrary>().To<ReservationsLibrary>();
             kernel.Bind<IMaharajasDBContext>().To<MaharajaRestaurant.DAL.MaharajasDbContext>();
             
 

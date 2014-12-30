@@ -15,5 +15,7 @@ namespace MaharajaRestaurant.Business.Interfaces
     {
         IMenusLibrary MenusLib { get; set; }
         IPhotoMenusLibrary PhotoMenusLib { get; set; }
+
+        IReservationsLibrary ReservationsLib { get; set; }
     }
 }

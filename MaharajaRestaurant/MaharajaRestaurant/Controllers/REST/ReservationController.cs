@@ -33,17 +33,18 @@ namespace MaharajaRestaurant.Controllers.REST
         public Task<HttpResponseMessage> Create(inReservationModel model)
         {
             HttpResponseMessage response = new HttpResponseMessage();
+
+            bool checkemail = this.usermanager.CheckByEmailAsync(model.yourdetail.email).Result;
+
             if(model.yourdetail.firsttimecustomer)
             {
-                bool checkusername = this.usermanager.FindByUsernameAsync(model.yourdetail.username).Result;
+                bool checkusername = this.usermanager.CheckByUsernameAsync(model.yourdetail.username).Result;
 
                 if (checkusername)
                 {
                     response = Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Username " + model.yourdetail.username + " has been used.");
                     return Task.FromResult<HttpResponseMessage>(response);
-                }
-
-                bool checkemail = this.usermanager.FindByEmailAsync(model.yourdetail.email).Result;
+                }                
 
                 if (checkemail)
                 {
@@ -59,9 +60,24 @@ namespace MaharajaRestaurant.Controllers.REST
                     return Task.FromResult<HttpResponseMessage>(response);
                 }
             }
+            else
+            {
+                if (!checkemail)
+                {
+                    response = Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Your email " + model.yourdetail.email + " has never been registered before. Please select YES on I AM A FIRSTTIME CUSTOMER.");
+                    return Task.FromResult<HttpResponseMessage>(response);
+                }
+            }
 
             Reservation reservation = new Reservation();
+            reservation.UserID = this.usermanager.FindByEmailAsync(model.yourdetail.email).Result.Id;
+            reservation.Name = model.yourevent.name;
+            reservation.Date = new DateTime(model.yourevent.year, model.yourevent.month, model.yourevent.day);
+            reservation.Environment = model.yourevent.environment;
+            reservation.NumberOfPeople = model.yourevent.numberofpeople;
+            reservation.PaymentMethod = model.yourevent.paymentmethod;
 
+            this.library.ReservationsLib.Create(reservation);
             
             return Task.FromResult<HttpResponseMessage>(response);
         }

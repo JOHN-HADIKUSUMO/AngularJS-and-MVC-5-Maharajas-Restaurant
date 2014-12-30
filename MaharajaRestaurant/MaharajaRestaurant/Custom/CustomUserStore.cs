@@ -19,14 +19,24 @@ namespace MaharajaRestaurant.Custom
             this.context = context;
         }
 
-        public Task<bool> FindByUsernameAsync(string username)
+        public Task<bool> CheckByUsernameAsync(string username)
         {
             return Task.FromResult<bool>(this.context.Users.Where(w => w.UserName.Contains(username)).Any());
         }
 
-        public Task<bool> FindByEmailAsync(string email)
+        public Task<ApplicationUser> FindByUsernameAsync(string username)
         {
-            return Task.FromResult<bool>(this.context.Users.Where(w => w.Email.Contains(email)).Any());        
+            return Task.FromResult<ApplicationUser>(this.context.Users.Where(w => w.UserName.Contains(username)).FirstOrDefault());
+        }
+
+        public Task<bool> CheckByEmailAsync(string email)
+        {
+            return Task.FromResult<bool>(this.context.Users.Where(w => w.Email.Contains(email)).Any());
+        }
+
+        public Task<ApplicationUser> FindByEmailAsync(string email)
+        {
+            return Task.FromResult<ApplicationUser>(this.context.Users.Where(w => w.Email.Contains(email)).FirstOrDefault());        
         }
 
         public Task CreateAsync(ApplicationUser user)

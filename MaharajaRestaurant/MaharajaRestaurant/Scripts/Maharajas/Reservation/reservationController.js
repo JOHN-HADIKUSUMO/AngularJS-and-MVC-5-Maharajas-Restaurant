@@ -3,6 +3,8 @@
         yourdetail: { title: undefined, firstname: undefined, lastname: undefined, email: undefined, mobile: undefined, firsttimecustomer: 'false', username: undefined, password: undefined, conpassword: undefined },
         yourevent: { name: undefined, day: 1, month: 1, year: 2014, numberofpeople: '1-5', environtment: 0, paymentmethod: 0 }
     };
+
+    var oriBooking = angular.copy($scope.booking);
     $scope.titleoptions = ['Mr', 'Mrs', 'Ms', 'Sir', 'Madam'];
     $scope.dayoptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
     $scope.monthoptions = [
@@ -128,6 +130,11 @@
             $scope.removeerror(item[i]);
         };
     };
+
+    $scope.reset = function () {
+        $scope.booking = angular.copy(oriBooking);
+    };
+
     $scope.removeerror = function (str) {
         var fn = $('#' + str);
         fn.parent().removeClass('has-error')

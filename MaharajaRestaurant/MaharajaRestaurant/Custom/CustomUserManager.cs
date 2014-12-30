@@ -12,17 +12,19 @@ namespace MaharajaRestaurant.Custom
 {
     public class CustomUserManager : UserManager<ApplicationUser>
     {
+        private IdentityDbContext dbcontext;
         private CustomUserStore customuserstore;
-        public CustomUserManager(CustomUserStore customuserstore)
+        public CustomUserManager(CustomUserStore customuserstore, IdentityDbContext dbcontext)
             : base(new CustomUserStore(new UserStore<ApplicationUser>(new MaharajasDbContext()), new MaharajasDbContext()))
         {
+            this.dbcontext = dbcontext;
             this.customuserstore = customuserstore;
         }
 
         public CustomUserManager()
-            : this(new CustomUserStore(new UserStore<ApplicationUser>(new MaharajasDbContext()), new MaharajasDbContext()))
+            : this(new CustomUserStore(new UserStore<ApplicationUser>(new MaharajasDbContext()), new MaharajasDbContext()), new IdentityDbContext())
         {
-
+            
         }
 
         public Task<bool> CreateAsync(ApplicationUser user,string email, string password)
@@ -37,9 +39,10 @@ namespace MaharajaRestaurant.Custom
 
             if(tempuser != null)
             {
+                string roleid = dbcontext.Roles.Where(w => w.Name == "CUSTOMER").Select(s => s.Id).FirstOrDefault<string>();
                 IdentityUserRole temprole =  new IdentityUserRole();
                 temprole.UserId = tempuser.Result.Id;
-                temprole.RoleId = "6f1345dd-26f6-4967-a326-c227b8d8b2df";/* Hard coded */
+                temprole.RoleId = roleid;
                 tempuser.Result.Roles.Add(temprole);
                 this.customuserstore.UpdateAsync(tempuser.Result);
             }
@@ -47,12 +50,22 @@ namespace MaharajaRestaurant.Custom
             return Task.FromResult<bool>(true);
         }
 
-        public virtual Task<bool> FindByUsernameAsync(string username)
+        public virtual Task<bool> CheckByUsernameAsync(string username)
+        {
+            return this.customuserstore.CheckByUsernameAsync(username);
+        }
+
+        public virtual Task<ApplicationUser> FindByUsernameAsync(string username)
         {
             return this.customuserstore.FindByUsernameAsync(username);
         }
 
-        public virtual Task<bool> FindByEmailAsync(string email)
+        public virtual Task<bool> CheckByEmailAsync(string email)
+        {
+            return this.customuserstore.CheckByEmailAsync(email);
+        }
+
+        public virtual Task<ApplicationUser> FindByEmailAsync(string email)
         {
             return this.customuserstore.FindByEmailAsync(email);
         }
