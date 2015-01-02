@@ -64,7 +64,7 @@ namespace MaharajaRestaurant.Controllers.REST
             {
                 if (!checkemail)
                 {
-                    response = Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Your email " + model.yourdetail.email + " has never been registered before. Please select YES on I AM A FIRSTTIME CUSTOMER.");
+                    response = Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Your email " + model.yourdetail.email + " has never been registered before. Please select YES on I AM NEW CUSTOMER.");
                     return Task.FromResult<HttpResponseMessage>(response);
                 }
             }

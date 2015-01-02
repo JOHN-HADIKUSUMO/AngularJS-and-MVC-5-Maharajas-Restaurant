@@ -232,6 +232,8 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\REST\Menu\MenuItem.cs" />
+    <Compile Include="Models\REST\Menu\outMenuList.cs" />
     <Compile Include="Models\REST\Reservation\inReservationModel.cs" />
     <Compile Include="Models\REST\Reservation\yourDetailModel.cs" />
     <Compile Include="Models\REST\Reservation\yourEventModel.cs" />

@@ -25,7 +25,7 @@ namespace MaharajaRestaurant.Tests
         public void FindByEmailAsync_Test()
         {
             CustomUserManager usermanager = new CustomUserManager();
-            Task<bool> check = usermanager.FindByEmailAsync("happycustomer@maharajasrestaurant.com.au");
+            Task<bool> check = usermanager.CheckByEmailAsync("happycustomer@maharajasrestaurant.com.au");
 
             Assert.IsTrue(check.Result);
         }

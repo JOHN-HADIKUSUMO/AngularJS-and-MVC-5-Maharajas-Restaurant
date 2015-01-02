@@ -26,7 +26,7 @@ namespace MaharajaRestaurant.Tests
         public void FindByEmailAsync_Test()
         {
             CustomUserStore userstore = new CustomUserStore(new UserStore<ApplicationUser>(new MaharajasDbContext()), context);
-            Task<bool> check = userstore.FindByEmailAsync("happycustomer@maharajasrestaurant.com.au");
+            Task<bool> check = userstore.CheckByEmailAsync("happycustomer@maharajasrestaurant.com.au");
 
             Assert.IsTrue(check.Result);
         }

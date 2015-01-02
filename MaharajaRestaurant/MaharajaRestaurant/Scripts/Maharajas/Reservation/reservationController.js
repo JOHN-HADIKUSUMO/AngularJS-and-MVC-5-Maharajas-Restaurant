@@ -81,7 +81,7 @@
             fn.next().removeClass('sr-only');
             fn.next().html('email must be provided.');
         }
-        else if ($.trim($scope.booking.yourdetail.username) == '') {
+        else if ($.trim($scope.booking.yourdetail.firsttimecustomer) == '1' && $.trim($scope.booking.yourdetail.username) == '') {
             var fn = $('#username');
             fn.parent().addClass('has-error')
             fn.next().removeClass('sr-only');
