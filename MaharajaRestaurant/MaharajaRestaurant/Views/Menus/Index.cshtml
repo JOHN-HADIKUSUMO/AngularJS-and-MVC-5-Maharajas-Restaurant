@@ -1,10 +1,10 @@
 ﻿@{
     ViewBag.Title = "Menus";
 }
-<div class="container">
+<div class="container" ng-init="category='@Html.Raw(ViewData["Category"])'">
     <ol class="breadcrumb">
         <li><a href="#">Menus</a></li>
-        <li class="active">@Html.Raw(ViewData["Category"])</li>
+        <li class="active">@Html.Raw(ViewData["BreadCrumb"])</li>
     </ol>
     <menus-form />
 </div>

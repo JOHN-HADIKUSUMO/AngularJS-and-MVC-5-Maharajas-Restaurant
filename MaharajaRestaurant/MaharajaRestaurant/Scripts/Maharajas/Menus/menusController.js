@@ -1,9 +1,20 @@
 ﻿maharajasApp.controller('menusController', function menusController($scope, menusService) {
-    $scope.firstname = 'John';
-    var promisegetall = menusService.getall();
+    var promisegetall = menusService.getall($scope.category);
     promisegetall.then(function (response) {
         $scope.menuslist = response.data;
     }, function (response) {
-        alert(response.status);
+        bootbox.dialog({
+            message: response.data.Message,
+            title: "Error",
+            buttons: {
+                close: {
+                    label: "Close",
+                    className: "btn btn-black",
+                    callback: function () {
+                        
+                    }
+                }
+            }
+        });
     });
 });

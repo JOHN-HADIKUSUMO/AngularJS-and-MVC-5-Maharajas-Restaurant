@@ -24,6 +24,5 @@ namespace MaharajaRestaurant.DAL
         public Nullable<DateTime> DeletedDate { get; set; }
         public virtual ICollection<PhotoMenu> PhotoMenus { get; set; }
 
-        //public string Test { get; set; }
     }
 }

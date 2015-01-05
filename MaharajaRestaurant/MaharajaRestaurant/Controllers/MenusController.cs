@@ -17,10 +17,11 @@ namespace MaharajaRestaurant.Controllers
         {
 
         }
-        [Route("{category}")]
-        public ActionResult Index(string category)
+        [Route("{category?}")]
+        public ActionResult Index(string category = "")
         {
-            ViewData["Category"] = category.Replace("-", " ");
+            ViewData["BreadCrumb"] = category.Replace("-", " ");
+            ViewData["Category"] = category.Replace("-", "_");
             return View();
         }
     }
