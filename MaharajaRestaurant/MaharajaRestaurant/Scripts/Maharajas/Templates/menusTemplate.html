@@ -2,7 +2,7 @@
     <div class="row" ng-repeat="block in menuslist">
         <div class="col-sm-6 col-md-3" ng-repeat="item in block" style="margin-bottom:20px;">
             <div class="thumbnail">
-                <img src="{{item.imgurl}}" alt="{{item.title}}" />
+                <img ng-src="{{item.imgurl}}" alt="{{item.title}}" />
                 <div class="caption">
                     <h4>{{item.title}}</h4>
                     <h5><i>{{item.price}}</i></h5>

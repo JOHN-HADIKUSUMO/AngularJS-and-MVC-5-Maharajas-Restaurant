@@ -230,6 +230,10 @@
     <Compile Include="Migrations\201412291655115_migration.Designer.cs">
       <DependentUpon>201412291655115_migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201501060247581_migration1.cs" />
+    <Compile Include="Migrations\201501060247581_migration1.Designer.cs">
+      <DependentUpon>201501060247581_migration1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\REST\Menu\MenuItem.cs" />
@@ -270,7 +274,7 @@
     <Content Include="Images\Menus\E7D15EBD-CF15-444D-A687-CC355BC37037.png" />
     <Content Include="Images\Menus\38DE39D7-DCDD-4695-80F6-0396D8B6B9FD.png" />
     <Content Include="Images\Menus\984547A2-8357-42EA-A730-A927E463DA66.png" />
-    <Content Include="Images\Menus\{06409BB6-B146-4D3C-A7FD-3B02584177E7}.png" />
+    <Content Include="Images\Menus\06409BB6-B146-4D3C-A7FD-3B02584177E7.png" />
     <Content Include="Images\Menus\B9C88C79-78DC-4787-85ED-238C6B945ECA.png" />
     <Content Include="Images\Menus\983B99CC-63AA-4C5C-957D-DA4B9FC27BC0.png" />
     <Content Include="Images\Menus\827EDE4F-73F8-4D46-AB73-71092242A3A9.png" />
@@ -385,6 +389,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201412291655115_migration.resx">
       <DependentUpon>201412291655115_migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501060247581_migration1.resx">
+      <DependentUpon>201501060247581_migration1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
