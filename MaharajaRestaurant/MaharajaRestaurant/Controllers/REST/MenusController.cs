@@ -40,16 +40,29 @@ namespace MaharajaRestaurant.Controllers.REST
             }
             else
             {
-                MenusType type = (MenusType)Enum.Parse(typeof(MenusType), category);
-                tempmenus = library.MenusLib.ReadAll(type).ToList<Menu>();
+                try
+                {
+                    MenusType type = (MenusType)Enum.Parse(typeof(MenusType), category);
+                    tempmenus = library.MenusLib.ReadAll(type).ToList<Menu>();
+                }
+                catch(Exception ex)
+                {
+                    response = Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Invalid Menu Type.");
+                    return response;
+                }
             }
             
             if (tempmenus != null)
             {
-                List<MenuItem> row = new List<MenuItem>() { };
+                List<MenuItem> row = null;
                 int count = 0;
                 foreach (Menu menu in tempmenus)
                 {
+                    if(count == 0)
+                    {
+                        row = new List<MenuItem>() { };
+                    }
+
                     string url = @"/Images/" + (menu.PhotoMenus.Any() ? "Menus/" + menu.PhotoMenus.FirstOrDefault().GUIDFilename : "Boxes/300x300-Box.png");
                     string price = "$" + menu.Price.ToString() + menu.WordAfterPrice.Trim() == "" ? "" : "";
                     row.Add(new MenuItem(menu.MenuID, url, menu.Name, menu.Description, price));
@@ -64,7 +77,7 @@ namespace MaharajaRestaurant.Controllers.REST
                     }
                 }
 
-                if (count < 4)
+                if (row != null && count < 4)
                 {
                     ret.Add(row);
                 }

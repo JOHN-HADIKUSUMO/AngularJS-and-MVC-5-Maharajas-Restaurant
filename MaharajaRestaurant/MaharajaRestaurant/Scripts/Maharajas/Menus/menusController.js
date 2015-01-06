@@ -17,4 +17,11 @@
             }
         });
     });
+    $scope.add = function (d) {
+        alert(d);
+    };
+    $scope.hasrecord = true;
+    $scope.$watch('menuslist', function () {
+        $scope.hasrecord = $scope.menuslist.length > 0;
+    });
 });
