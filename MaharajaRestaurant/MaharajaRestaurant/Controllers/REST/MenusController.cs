@@ -11,6 +11,7 @@ using MaharajaRestaurant.DAL;
 using MaharajaRestaurant.DAL.Interfaces;
 using MaharajaRestaurant.Models;
 using MaharajaRestaurant.Models.REST.Menu;
+using MaharajaRestaurant.Utility;
 
 namespace MaharajaRestaurant.Controllers.REST
 {
@@ -65,7 +66,7 @@ namespace MaharajaRestaurant.Controllers.REST
 
                     string url = @"/Images/" + (menu.PhotoMenus.Any() ? "Menus/" + menu.PhotoMenus.FirstOrDefault().GUIDFilename : "Boxes/300x300-Box.png");
                     string price = "$" + menu.Price.ToString() + menu.WordAfterPrice.Trim() == "" ? "" : "";
-                    row.Add(new MenuItem(menu.MenuID, url, menu.Name, menu.Description, price));
+                    row.Add(new MenuItem(menu.MenuID, url, menu.Name,menu.Name.Replace(" ","-"), Word.GetItShortened(menu.Description,15), price));
 
                     count++;
                    

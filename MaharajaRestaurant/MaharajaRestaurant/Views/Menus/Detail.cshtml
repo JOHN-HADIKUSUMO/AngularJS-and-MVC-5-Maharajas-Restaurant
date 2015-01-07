@@ -1,17 +1,17 @@
 ﻿@{
-    ViewBag.Title = "Menus";
+    ViewBag.Title = "Menus Detail";
 }
-<div class="container" ng-init="category='@Html.Raw(ViewData["Category"])'" style="min-height:500px;">
+<div class="container" ng-init="id='@Html.Raw(ViewData["id"])'" style="min-height:500px;">
     <ol class="breadcrumb">
         <li><a href="#">Menus</a></li>
-        <li class="active">@Html.Raw(ViewData["BreadCrumb"])</li>
+        <li class="active">Detail</li>
     </ol>
-    <menus-form />
+    <menu-detail-form />
 </div>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     <script src="~/Scripts/Maharajas/maharajasApp.js"></script>
     <script src="~/Scripts/Maharajas/Menus/menusController.js"></script>
-    <script src="~/Scripts/Maharajas/Menus/menusDirective.js"></script>
+    <script src="~/Scripts/Maharajas/Menus/menudetailDirective.js"></script>
     <script src="~/Scripts/Maharajas/Menus/menusService.js"></script>
 }

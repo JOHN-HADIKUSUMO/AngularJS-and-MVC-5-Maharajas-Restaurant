@@ -24,5 +24,12 @@ namespace MaharajaRestaurant.Controllers
             ViewData["Category"] = category.Replace("-", "_");
             return View();
         }
+
+        [Route("Detail/{id}/{name}")]
+        public ActionResult Detail(int id,string name)
+        {
+            ViewData["id"] = id;
+            return View();
+        }
     }
 }

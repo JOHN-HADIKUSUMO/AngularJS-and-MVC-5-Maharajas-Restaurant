@@ -245,6 +245,7 @@
     <Compile Include="Ninject\NinjectScope.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Utility\Word.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -330,6 +331,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\Maharajas\maharajasApp.js" />
     <Content Include="Scripts\Maharajas\Menus\menusController.js" />
+    <Content Include="Scripts\Maharajas\Menus\menusDetailDirective.js" />
     <Content Include="Scripts\Maharajas\Menus\menusDirective.js" />
     <Content Include="Scripts\Maharajas\Menus\menusService.js" />
     <Content Include="Scripts\Maharajas\Reservation\reservationController.js" />
@@ -338,6 +340,7 @@
     <Content Include="Scripts\Maharajas\Sliders\slidersController.js" />
     <Content Include="Scripts\Maharajas\Sliders\slidersDirective.js" />
     <Content Include="Scripts\Maharajas\Sliders\slidersService.js" />
+    <Content Include="Scripts\Maharajas\Templates\menusDetailTemplate.html" />
     <Content Include="Scripts\Maharajas\Templates\reservationTemplate.html" />
     <Content Include="Scripts\Maharajas\Templates\menusTemplate.html" />
     <Content Include="Scripts\Maharajas\Templates\slidersTemplate.html" />
@@ -375,6 +378,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Reservation\Index.cshtml" />
     <Content Include="Views\Documents\Index.cshtml" />
+    <Content Include="Views\Menus\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
