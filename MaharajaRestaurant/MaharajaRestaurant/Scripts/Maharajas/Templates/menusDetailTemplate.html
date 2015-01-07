@@ -1,21 +1,4 @@
-﻿<div class="container" ng-controller="menusController">
-    <div class="row" ng-hide="hasrecord">
-        <div class="col-sm-offset-5 col-sm-3 col-sm-offset-4 col-md-offset-5 col-md-2 col-md-offset-5" style="margin-top:50px;margin-bottom:200px;">
-            no record found.
-        </div>
-    </div>
-    <div class="row" ng-repeat="block in menuslist" ng-hide="!hasrecord">
-        <div class="col-sm-6 col-md-3" ng-repeat="item in block" style="margin-bottom:20px;">
-            <div class="thumbnail">
-                <img ng-src="{{item.imgurl}}" alt="{{item.title}}" />
-                <div class="caption">
-                    <h4>{{item.title}}</h4>
-                    <h5><i>{{item.price}}</i></h5>
-                    <p>{{item.description}}</p>
-                    <p><a href="#" class="btn btn-primary" role="button" ng-click="add(item.id)">Add</a> <a href="/Menus/Detail/{{item.id}}/{{item.titleforurl}}" class="btn btn-default" role="button">Read</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
+﻿<div class="container" ng-controller="menusDetailController">
+
 </div>
 

@@ -1,6 +1,6 @@
-﻿maharajasApp.directive('menudetailForm', function () {
+﻿maharajasApp.directive('menusdetailForm', function () {
     return {
         restrict: 'E',
-        templateUrl: '../Scripts/Maharajas/Templates/menusDetailTemplate.html'
+        templateUrl: '/Scripts/Maharajas/Templates/menusDetailTemplate.html'
     }
 });

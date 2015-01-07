@@ -24,6 +24,42 @@ namespace MaharajaRestaurant.Controllers.REST
 
         }
 
+        [HttpGet]
+        [AcceptVerbs("GET")]
+        [Route("GET/{id}")]
+        [AllowAnonymous]
+        public HttpResponseMessage Get(int id)
+        {
+            HttpResponseMessage response = new HttpResponseMessage();
+
+            Menu tempMenu = library.MenusLib.Read(id);
+
+            if (tempMenu == null)
+            {
+                response = Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Invalid menu id.");
+            }
+            else
+            {
+                outMenuItemDetail temp = new outMenuItemDetail();
+                temp.id = tempMenu.MenuID;
+                temp.title = tempMenu.Name;
+                temp.description = tempMenu.Description;
+                temp.price = "$" + tempMenu.Price.ToString() + (tempMenu.WordAfterPrice.Trim()==""?"": tempMenu.WordAfterPrice);
+                
+                if(tempMenu.PhotoMenus.Any())
+                {
+                    temp.imgurl = "/Images/Menus/" + tempMenu.PhotoMenus.FirstOrDefault().GUIDFilename;
+                }
+                else
+                {
+                    temp.imgurl = "/Images/Boxes/300x300-Box.png";
+                }
+
+                response = Request.CreateResponse(HttpStatusCode.OK, temp);
+            }
+
+            return response;
+        }
 
         [HttpGet]
         [AcceptVerbs("GET")]
@@ -66,7 +102,7 @@ namespace MaharajaRestaurant.Controllers.REST
 
                     string url = @"/Images/" + (menu.PhotoMenus.Any() ? "Menus/" + menu.PhotoMenus.FirstOrDefault().GUIDFilename : "Boxes/300x300-Box.png");
                     string price = "$" + menu.Price.ToString() + menu.WordAfterPrice.Trim() == "" ? "" : "";
-                    row.Add(new MenuItem(menu.MenuID, url, menu.Name,menu.Name.Replace(" ","-"), Word.GetItShortened(menu.Description,15), price));
+                    row.Add(new MenuItem(menu.MenuID, url, menu.Name,menu.Name.Replace(" ","-").Replace("(","").Replace(")","").Replace("/","").Replace(@"\",""), Word.GetItShortened(menu.Description,15), price));
 
                     count++;
                    
