@@ -13,7 +13,7 @@ namespace MaharajaRestaurant.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201412291014283_migration"; }
+            get { return "201501160608472_migration"; }
         }
         
         string IMigrationMetadata.Source

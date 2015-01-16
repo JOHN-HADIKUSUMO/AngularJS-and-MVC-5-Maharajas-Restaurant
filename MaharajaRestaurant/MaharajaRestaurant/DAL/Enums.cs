@@ -27,6 +27,7 @@ namespace MaharajaRestaurant.DAL
         NotHot = 0,
         Mild = 1,
         Hot = 2,
-        Extreme = 3    
+        VeryHot = 3,
+        Extreme = 4    
     }
 }

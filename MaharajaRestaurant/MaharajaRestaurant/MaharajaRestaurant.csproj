@@ -227,17 +227,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201412291655115_migration.cs" />
-    <Compile Include="Migrations\201412291655115_migration.Designer.cs">
-      <DependentUpon>201412291655115_migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201501060247581_migration1.cs" />
-    <Compile Include="Migrations\201501060247581_migration1.Designer.cs">
-      <DependentUpon>201501060247581_migration1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201501160344551_migration2.cs" />
-    <Compile Include="Migrations\201501160344551_migration2.Designer.cs">
-      <DependentUpon>201501160344551_migration2.cs</DependentUpon>
+    <Compile Include="Migrations\201501160608472_migration.cs" />
+    <Compile Include="Migrations\201501160608472_migration.Designer.cs">
+      <DependentUpon>201501160608472_migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -371,6 +363,14 @@
     <Content Include="Database\Maharajas.bak" />
     <Content Include="Documents\pp_EEF86C55-0B07-430C-9A7F-D3C81D350B3A.pdf" />
     <Content Include="Documents\tc_16105D23-086E-4F61-B0C2-6E858C1C6D4F.pdf" />
+    <Content Include="PSDs\300x300-Box.psd" />
+    <Content Include="PSDs\Chillis\Chillies.psd" />
+    <Content Include="PSDs\Chillis\Extreme.psd" />
+    <Content Include="PSDs\Chillis\Hot.psd" />
+    <Content Include="PSDs\Chillis\Mild.psd" />
+    <Content Include="PSDs\Chillis\NotHot.psd" />
+    <Content Include="PSDs\Chillis\VeryHot.psd" />
+    <Content Include="PSDs\Sliders.psd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -442,14 +442,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201412291655115_migration.resx">
-      <DependentUpon>201412291655115_migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201501060247581_migration1.resx">
-      <DependentUpon>201501060247581_migration1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201501160344551_migration2.resx">
-      <DependentUpon>201501160344551_migration2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201501160608472_migration.resx">
+      <DependentUpon>201501160608472_migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

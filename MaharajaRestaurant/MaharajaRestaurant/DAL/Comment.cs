@@ -14,9 +14,7 @@ namespace MaharajaRestaurant.DAL
     {
         [Key]
         public int CommentID { get; set; }
-        [ForeignKey("Menus")]
         public virtual int MenuID { get; set; }
-        [ForeignKey("ApplicationUser")]
         public virtual string UserID { get; set; }
         public string Description { get; set; }
         public Nullable<DateTime> CreatedDate { get; set; }

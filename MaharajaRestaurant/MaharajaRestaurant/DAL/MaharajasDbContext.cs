@@ -48,7 +48,6 @@ namespace MaharajaRestaurant.DAL
         public DbSet<Menu> Menus { get; set; }
         public DbSet<PhotoMenu> PhotoMenus { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
-
-
+        public DbSet<Comment> Comments { get; set; }
     }
 }
