@@ -1,4 +1,29 @@
 ﻿<div class="container" ng-controller="menusDetailController">
-
+    <div class="row">
+        <div class="col-sm-6 col-md-6">
+            <div class="thumbnail">
+                <img ng-src="{{menuitem.imgurl}}" alt="{{menuitem.title}}"/>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <span>No.{{menuitem.id}}</span>
+                </div>
+                <div class="col-sm-12 col-md-12">
+                    <label>{{menuitem.title}}</label> 
+                </div>
+                <div class="col-sm-12 col-md-12">
+                    {{menuitem.description}}
+                </div>
+                <div class="col-sm-12 col-md-12">
+                    <span>{{menuitem.price}}</span>
+                </div>
+                <div class="col-sm-12 col-md-12">
+                    <button class="btn-primary" ng-hide="menuitem.url==''" ng-click="back()">Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 

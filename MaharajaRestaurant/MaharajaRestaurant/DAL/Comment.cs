@@ -9,21 +9,18 @@ using MaharajaRestaurant.DAL;
 
 namespace MaharajaRestaurant.DAL
 {
-    [Table("Menus")]
-    public class Menu
+    [Table("Comments")]
+    public class Comment
     {
         [Key]
-        public int MenuID { get; set; }
-        public string Name { get; set; }
+        public int CommentID { get; set; }
+        [ForeignKey("Menus")]
+        public virtual int MenuID { get; set; }
+        [ForeignKey("ApplicationUser")]
+        public virtual string UserID { get; set; }
         public string Description { get; set; }
-        public MenusType Type { get; set; }
-        public double Price { get; set; }
-        public string WordAfterPrice { get; set; }
-        public HotLevel HotScale { get; set; }
         public Nullable<DateTime> CreatedDate { get; set; }
         public Nullable<bool> IsDeleted { get; set; }
         public Nullable<DateTime> DeletedDate { get; set; }
-        public virtual ICollection<PhotoMenu> PhotoMenus { get; set; }
-
     }
 }

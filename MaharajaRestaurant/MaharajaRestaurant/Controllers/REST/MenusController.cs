@@ -48,7 +48,7 @@ namespace MaharajaRestaurant.Controllers.REST
                 
                 if(tempMenu.PhotoMenus.Any())
                 {
-                    temp.imgurl = "/Images/Menus/" + tempMenu.PhotoMenus.FirstOrDefault().GUIDFilename;
+                    temp.imgurl = "/Images/Menus/600x600/" + tempMenu.PhotoMenus.FirstOrDefault().GUIDFilename;
                 }
                 else
                 {
@@ -100,7 +100,7 @@ namespace MaharajaRestaurant.Controllers.REST
                         row = new List<MenuItem>() { };
                     }
 
-                    string url = @"/Images/" + (menu.PhotoMenus.Any() ? "Menus/" + menu.PhotoMenus.FirstOrDefault().GUIDFilename : "Boxes/300x300-Box.png");
+                    string url = @"/Images/" + (menu.PhotoMenus.Any() ? "Menus/300x300/" + menu.PhotoMenus.FirstOrDefault().GUIDFilename : "Boxes/300x300-Box.png");
                     string price = "$" + menu.Price.ToString() + menu.WordAfterPrice.Trim() == "" ? "" : "";
                     row.Add(new MenuItem(menu.MenuID, url, menu.Name,menu.Name.Replace(" ","-").Replace("(","").Replace(")","").Replace("/","").Replace(@"\",""), Word.GetItShortened(menu.Description,15), price));
 

@@ -24,4 +24,5 @@
     $scope.$watch('menuslist', function () {
         $scope.hasrecord = $scope.menuslist.length > 0;
     });
+
 });

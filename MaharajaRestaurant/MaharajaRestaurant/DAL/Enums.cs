@@ -21,4 +21,12 @@ namespace MaharajaRestaurant.DAL
         Terms_and_Conditions = 0,
         Privacy_Policy = 1
     }
+
+    public enum HotLevel
+    {
+        NotHot = 0,
+        Mild = 1,
+        Hot = 2,
+        Extreme = 3    
+    }
 }

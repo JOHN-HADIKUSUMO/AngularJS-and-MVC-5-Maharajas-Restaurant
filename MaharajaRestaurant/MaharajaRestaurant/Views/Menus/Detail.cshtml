@@ -1,13 +1,14 @@
 ﻿@{
     ViewBag.Title = "Menus Detail";
 }
-<div class="container" ng-init="id='@Html.Raw(ViewData["id"])'" style="min-height:500px;">
+<div class="container" ng-init="id=@Html.Raw(ViewData["id"]);url=@Html.Raw("'" + ViewData["url"] + "'")" style="min-height:500px;">
     <ol class="breadcrumb">
         <li><a href="#">Menus</a></li>
         <li class="active">Detail</li>
     </ol>
     <menusdetail-form />
 </div>
+
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     <script src="~/Scripts/Maharajas/maharajasApp.js"></script>

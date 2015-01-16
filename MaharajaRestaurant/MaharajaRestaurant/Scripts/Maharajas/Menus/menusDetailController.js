@@ -5,4 +5,7 @@
     }, function (response) {
 
     });
+    $scope.back = function () {
+        window.location = $scope.url;
+    };
 });

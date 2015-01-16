@@ -29,6 +29,7 @@ namespace MaharajaRestaurant.Controllers
         public ActionResult Detail(int id,string name)
         {
             ViewData["id"] = id;
+            ViewData["url"] = Request.UrlReferrer == null ? "" : Request.UrlReferrer.AbsolutePath;
             return View();
         }
     }
