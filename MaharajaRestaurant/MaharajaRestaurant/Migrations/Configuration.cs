@@ -67,6 +67,7 @@ namespace MaharajaRestaurant.Migrations
                 menu0.Type = MenusType.Entrees;
                 menu0.Price = 2.70;
                 menu0.WordAfterPrice = "(3pcs)";
+                menu0.HotScale = HotLevel.Mild;
                 context.Menus.AddOrUpdate(menu0);
                 context.SaveChanges();
 
@@ -97,6 +98,7 @@ namespace MaharajaRestaurant.Migrations
                 menu1.Type = MenusType.Entrees;
                 menu1.Price = 1.20;
                 menu1.WordAfterPrice = "(per plate)";
+                menu1.HotScale = HotLevel.Hot;
                 context.Menus.AddOrUpdate(menu1);
                 context.SaveChanges();
 
@@ -120,6 +122,7 @@ namespace MaharajaRestaurant.Migrations
                 menu2.Type = MenusType.Entrees;
                 menu2.Price = 2.50;
                 menu2.WordAfterPrice = "(small plate)";
+                menu2.HotScale = HotLevel.Mild;
                 context.Menus.AddOrUpdate(menu2);
                 context.SaveChanges();
 
@@ -147,6 +150,7 @@ namespace MaharajaRestaurant.Migrations
                 menu3.Type = MenusType.Main_Course;
                 menu3.Price = 12.90;
                 menu3.WordAfterPrice = "/plate";
+                menu3.HotScale = HotLevel.Mild;
                 context.Menus.AddOrUpdate(menu3);
                 context.SaveChanges();
 

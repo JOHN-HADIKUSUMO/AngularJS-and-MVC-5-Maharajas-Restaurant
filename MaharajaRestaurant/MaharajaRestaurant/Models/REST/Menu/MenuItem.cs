@@ -5,8 +5,9 @@ using System.Web;
 
 namespace MaharajaRestaurant.Models.REST.Menu
 {
-    public class MenuItem:outMenuItemDetail
+    public class MenuItem:outMenuItemDetailBase
     {
+        public string imgurl { get; set; }
         public string titleforurl { get; set; }
 
         public MenuItem():base()
@@ -14,7 +15,7 @@ namespace MaharajaRestaurant.Models.REST.Menu
 
         }
 
-        public MenuItem(int id,string imgurl,string title,string titleforurl,string description,string price):base(id,imgurl,title,description,price)
+        public MenuItem(int id,string imgurl,string title,string titleforurl,string description,string price,string imgurlhotlevel):base(id,title,description,price)
         {
             this.titleforurl = titleforurl;
         }

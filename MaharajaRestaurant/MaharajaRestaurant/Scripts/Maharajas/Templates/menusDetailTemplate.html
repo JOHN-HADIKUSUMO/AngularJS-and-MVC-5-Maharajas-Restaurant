@@ -1,9 +1,9 @@
 ﻿<div class="container" ng-controller="menusDetailController">
     <div class="row">
         <div class="col-sm-6 col-md-6">
-            <div class="thumbnail">
-                <img ng-src="{{menuitem.imgurl}}" alt="{{menuitem.title}}"/>
-            </div>
+            <ul class="bxslider">
+                <li ng-repeat="img in menuitem.imgurl" on-repeat-finish="finish()" ><img ng-src="{{img}}" alt="{{menuitem.title}}"/></li>
+            </ul>
         </div>
         <div class="col-sm-6 col-md-6">
             <div class="row">
@@ -18,6 +18,9 @@
                 </div>
                 <div class="col-sm-12 col-md-12">
                     <span>{{menuitem.price}}</span>
+                </div>
+                <div class="col-sm-12 col-md-12">
+                    <img ng-src="{{menuitem.imgurlhotlevel}}" width="100"/>
                 </div>
                 <div class="col-sm-12 col-md-12">
                     <button class="btn-primary" ng-hide="menuitem.url==''" ng-click="back()">Back</button>

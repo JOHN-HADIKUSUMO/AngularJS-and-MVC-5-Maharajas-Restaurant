@@ -233,6 +233,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\REST\Menu\outMenuItemDetailBase.cs" />
     <Compile Include="Models\REST\Menu\outMenuItemDetail.cs" />
     <Compile Include="Models\REST\Menu\MenuItem.cs" />
     <Compile Include="Models\REST\Menu\outMenuList.cs" />
@@ -253,6 +254,11 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\Boxes\300x300-Box.png" />
+    <Content Include="Images\Chilli\Extreme.gif" />
+    <Content Include="Images\Chilli\Hot.gif" />
+    <Content Include="Images\Chilli\Mild.gif" />
+    <Content Include="Images\Chilli\NotHot.gif" />
+    <Content Include="Images\Chilli\VeryHot.gif" />
     <Content Include="Images\Menus\300x300\756A933D-08D0-4201-A8B4-EFB6F42A895F.png" />
     <Content Include="Images\Menus\300x300\795123A9-E5D6-4D58-B304-33110D065A0D.png" />
     <Content Include="Images\Menus\300x300\35DAC79C-6322-4317-ABD2-50A7D18AED33.png" />
@@ -374,7 +380,16 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery.bxslider\bower.json" />
+    <Content Include="Scripts\jquery.bxslider\readme.md" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.bxslider\images\bx_loader.gif" />
+    <Content Include="Scripts\jquery.bxslider\images\controls.png" />
+    <Content Include="Scripts\jquery.bxslider\jquery.bxslider.css" />
+    <Content Include="Scripts\jquery.bxslider\jquery.bxslider.js" />
+    <Content Include="Scripts\jquery.bxslider\jquery.bxslider.min.js" />
+    <Content Include="Scripts\jquery.bxslider\plugins\jquery.easing.1.3.js" />
+    <Content Include="Scripts\jquery.bxslider\plugins\jquery.fitvids.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -383,6 +398,7 @@
     <Content Include="Scripts\Maharajas\Menus\menusDetailController.js" />
     <Content Include="Scripts\Maharajas\Menus\menusController.js" />
     <Content Include="Scripts\Maharajas\Menus\menusDetailDirective.js" />
+    <Content Include="Scripts\Maharajas\Menus\menusDirective - Copy.js" />
     <Content Include="Scripts\Maharajas\Menus\menusDirective.js" />
     <Content Include="Scripts\Maharajas\Menus\menusService.js" />
     <Content Include="Scripts\Maharajas\Reservation\reservationController.js" />

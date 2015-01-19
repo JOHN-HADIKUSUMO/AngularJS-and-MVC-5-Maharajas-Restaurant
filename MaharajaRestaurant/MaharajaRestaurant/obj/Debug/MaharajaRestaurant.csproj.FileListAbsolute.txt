@@ -188,7 +188,8 @@ D:\Github\AngularJS-and-MVC-5-Maharajas-Restaurant\MaharajaRestaurant\MaharajaRe
 D:\Github\AngularJS-and-MVC-5-Maharajas-Restaurant\MaharajaRestaurant\MaharajaRestaurant\bin\Microsoft.Owin.Security.Google.xml
 D:\Github\AngularJS-and-MVC-5-Maharajas-Restaurant\MaharajaRestaurant\MaharajaRestaurant\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Github\AngularJS-and-MVC-5-Maharajas-Restaurant\MaharajaRestaurant\MaharajaRestaurant\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-D:\Github\AngularJS-and-MVC-5-Maharajas-Restaurant\MaharajaRestaurant\MaharajaRestaurant\obj\Debug\MaharajaRestaurant.dll
-D:\Github\AngularJS-and-MVC-5-Maharajas-Restaurant\MaharajaRestaurant\MaharajaRestaurant\obj\Debug\MaharajaRestaurant.pdb
+D:\Github\AngularJS-and-MVC-5-Maharajas-Restaurant\MaharajaRestaurant\MaharajaRestaurant\obj\Debug\MaharajaRestaurant.csprojResolveAssemblyReference.cache
 D:\Github\AngularJS-and-MVC-5-Maharajas-Restaurant\MaharajaRestaurant\MaharajaRestaurant\obj\Debug\MaharajaRestaurant.Migrations.migration.resources
 D:\Github\AngularJS-and-MVC-5-Maharajas-Restaurant\MaharajaRestaurant\MaharajaRestaurant\obj\Debug\MaharajaRestaurant.csproj.GenerateResource.Cache
+D:\Github\AngularJS-and-MVC-5-Maharajas-Restaurant\MaharajaRestaurant\MaharajaRestaurant\obj\Debug\MaharajaRestaurant.dll
+D:\Github\AngularJS-and-MVC-5-Maharajas-Restaurant\MaharajaRestaurant\MaharajaRestaurant\obj\Debug\MaharajaRestaurant.pdb

@@ -33,6 +33,13 @@ namespace MaharajaRestaurant
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/bxslider").Include(
+                      "~/Scripts/jquery.bxslider/jquery.bxslider.js"));            
+
+            bundles.Add(new StyleBundle("~/Content/bxslider").Include(
+                      "~/Scripts/jquery.bxslider/jquery.bxslider.css"));
+
         }
     }
 }

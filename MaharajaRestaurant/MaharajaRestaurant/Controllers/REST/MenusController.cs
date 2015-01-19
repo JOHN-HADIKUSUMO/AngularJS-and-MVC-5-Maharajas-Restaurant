@@ -45,14 +45,19 @@ namespace MaharajaRestaurant.Controllers.REST
                 temp.title = tempMenu.Name;
                 temp.description = tempMenu.Description;
                 temp.price = "$" + tempMenu.Price.ToString() + (tempMenu.WordAfterPrice.Trim()==""?"": tempMenu.WordAfterPrice);
-                
+                temp.imgurlhotlevel = @"/Images/Chilli/" + Enum.GetName(typeof(HotLevel), tempMenu.HotScale) + ".gif";
+
                 if(tempMenu.PhotoMenus.Any())
                 {
-                    temp.imgurl = "/Images/Menus/600x600/" + tempMenu.PhotoMenus.FirstOrDefault().GUIDFilename;
+                    temp.imgurl = new List<string>();
+                    foreach(PhotoMenu photo in tempMenu.PhotoMenus)
+                    {
+                        temp.imgurl.Add(@"/Images/Menus/600x600/" + photo.GUIDFilename);
+                    }
                 }
                 else
                 {
-                    temp.imgurl = "/Images/Boxes/300x300-Box.png";
+                    temp.imgurl = new List<string>(){"/Images/Boxes/300x300-Box.png"};
                 }
 
                 response = Request.CreateResponse(HttpStatusCode.OK, temp);
@@ -102,7 +107,7 @@ namespace MaharajaRestaurant.Controllers.REST
 
                     string url = @"/Images/" + (menu.PhotoMenus.Any() ? "Menus/300x300/" + menu.PhotoMenus.FirstOrDefault().GUIDFilename : "Boxes/300x300-Box.png");
                     string price = "$" + menu.Price.ToString() + menu.WordAfterPrice.Trim() == "" ? "" : "";
-                    row.Add(new MenuItem(menu.MenuID, url, menu.Name,menu.Name.Replace(" ","-").Replace("(","").Replace(")","").Replace("/","").Replace(@"\",""), Word.GetItShortened(menu.Description,15), price));
+                    row.Add(new MenuItem(menu.MenuID, url, menu.Name,menu.Name.Replace(" ","-").Replace("(","").Replace(")","").Replace("/","").Replace(@"\",""), Word.GetItShortened(menu.Description,15), price,""));
 
                     count++;
                    
