@@ -17,6 +17,7 @@ namespace MaharajaRestaurant.Models.REST.Menu
 
         public MenuItem(int id,string imgurl,string title,string titleforurl,string description,string price,string imgurlhotlevel):base(id,title,description,price)
         {
+            this.imgurl = imgurl;
             this.titleforurl = titleforurl;
         }
     }

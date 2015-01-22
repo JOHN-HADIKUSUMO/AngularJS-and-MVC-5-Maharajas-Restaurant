@@ -227,10 +227,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201501160608472_migration.cs" />
-    <Compile Include="Migrations\201501160608472_migration.Designer.cs">
-      <DependentUpon>201501160608472_migration.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\REST\Menu\outMenuItemDetailBase.cs" />
@@ -398,7 +394,7 @@
     <Content Include="Scripts\Maharajas\Menus\menusDetailController.js" />
     <Content Include="Scripts\Maharajas\Menus\menusController.js" />
     <Content Include="Scripts\Maharajas\Menus\menusDetailDirective.js" />
-    <Content Include="Scripts\Maharajas\Menus\menusDirective - Copy.js" />
+    <Content Include="Scripts\Maharajas\Menus\onRepeatFinish.js" />
     <Content Include="Scripts\Maharajas\Menus\menusDirective.js" />
     <Content Include="Scripts\Maharajas\Menus\menusService.js" />
     <Content Include="Scripts\Maharajas\Reservation\reservationController.js" />
@@ -456,11 +452,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201501160608472_migration.resx">
-      <DependentUpon>201501160608472_migration.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
